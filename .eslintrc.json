@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-tabs": ["error", { "allowIndentationTabs": false }],
+    "react/no-unescaped-entities": 0,
+    "no-duplicate-imports": "error",
+    "react/react-in-jsx-scope": "off",
+    "array-bracket-newline": ["error", { "multiline": true }],
+    "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
+    "no-use-before-define": 0,
+    "radix": "error",
+    "no-alert": "error"
+  }
+}

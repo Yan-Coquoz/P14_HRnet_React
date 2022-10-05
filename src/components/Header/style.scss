@@ -1,0 +1,19 @@
+.main_logo_container {
+  margin-top: 20px;
+}
+.main_logo {
+  height: 10vh;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .main_logo {
+    animation: spin-logo infinite 40s linear;
+  }
+}
+@keyframes spin-logo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
