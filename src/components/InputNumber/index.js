@@ -1,29 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { InputText } from "@yan_coquoz/react_input";
+import { InputNumber } from "@yan_coquoz/react_input";
 import "./style.scss";
 
-const Input = ({ idName, label, isRequired, myClass, onchange }) => {
-  const handleChange = (evt) => {
-    onchange(evt);
-  };
+const InputNum = ({ idName, label, sendValue, isRequired, myClass }) => {
   return (
-    <InputText
+    <InputNumber
       idName={idName}
       label={label}
+      sendValue={sendValue}
       isRequired={isRequired}
-      sendValue={handleChange}
       myClass={myClass}
     />
   );
 };
 
-Input.propTypes = {
+InputNum.propTypes = {
   idName: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  sendValue: PropTypes.func.isRequired,
   isRequired: PropTypes.bool.isRequired,
   myClass: PropTypes.string.isRequired,
-  onchange: PropTypes.func,
 };
-
-export default Input;
+export default InputNum;

@@ -1,9 +1,9 @@
 # P14_HRNet
 
 - ![Author](<https://img.shields.io/badge/Author-Yan Coquoz-">)
-- ![GitHub Starter-React-18-Redux size](<https://img.shields.io/github/repo-size/Yan-Coquoz/Starter-React-18-Redux>)  
-![GitHub top language](https://img.shields.io/github/languages/top/Yan-Coquoz/Starter-React-18-Redux)
-![GitHub language count](https://img.shields.io/github/languages/count/Yan-Coquoz/Starter-React-18-Redux)
+- ![GitHub P14_HRnet_React size](<https://img.shields.io/github/repo-size/Yan-Coquoz/P14_HRnet_React>)
+![GitHub top language](https://img.shields.io/github/languages/top/Yan-Coquoz/P14_HRnet_React)
+![GitHub language count](https://img.shields.io/github/languages/count/Yan-Coquoz/P14_HRnet_React)
 
 Créer avec CRA (Create-React-App).
 
@@ -28,15 +28,15 @@ yarn
 
 ## Dépendances ajoutées
 
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/react)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/prop-types)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/react-router-dom)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/redux)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/react-redux)
-- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/@reduxjs/toolkit)
-- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/dev/sass)
-- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/dev/prettier)
-- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/dev/eslint) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/dev/eslint-config-prettier) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/Starter-React-18-Redux/dev/eslint-plugin-react)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/react)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/prop-types)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/react-router-dom)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/redux)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/react-redux)
+- ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/@reduxjs/toolkit)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/sass)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/prettier)
+- ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint-config-prettier) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint-plugin-react)
 
 ## Scripts ajoutés
 
