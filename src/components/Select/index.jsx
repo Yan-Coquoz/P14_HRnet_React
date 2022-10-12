@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Select from "@yan_coquoz/react_input/dist/components/Select";
 import "./style.scss";
-import { onchange } from "./SelectSlice";
+import { onchange } from "../../features/SelectSlice";
 import { useDispatch } from "react-redux";
 
 const Selector = ({ idName, name, isRequired, tabs }) => {

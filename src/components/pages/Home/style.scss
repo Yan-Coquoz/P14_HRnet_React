@@ -30,12 +30,9 @@ legend {
     }
   }
   &__box_form {
-    margin: 2rem auto;
-    display: flex;
-    width: 50vw;
     &__form {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       gap: 3rem;
       &__box_button {
         align-self: end;

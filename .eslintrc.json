@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,8 +22,12 @@
     "semi": ["error", "always"],
     "no-tabs": ["error", { "allowIndentationTabs": false }],
     "react/no-unescaped-entities": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/prop-types": 0,
+    "react-hooks/exhaustive-deps": 1,
+    "react-hooks/rules-of-hooks": "error",
     "no-duplicate-imports": "error",
-    "react/react-in-jsx-scope": "off",
+
     "array-bracket-newline": ["error", { "multiline": true }],
     "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
     "no-use-before-define": 0,

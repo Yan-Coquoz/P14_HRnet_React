@@ -1,6 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit"; // remplace le reducer
+import { createSlice } from "@reduxjs/toolkit"; // remplace le reducer et les actions
 
 const initialState = {
+  // A prendre en compte seulement pour les tester
   firstName: "",
   lastName: "",
   street: "",
@@ -13,22 +14,28 @@ export const InputTextSlice = createSlice({
   name: "INPUT_TEXT", // type => titre du compo
   initialState,
   reducers: {
-    onchange: (state, action) => {
-      switch (action.type.key) {
+    onchange: (draft, action) => {
+      const { key, value } = action.payload;
+
+      switch (key) {
         case "firstname":
-          return (state.firstName = action.type.value);
+          draft.firstName = value;
+          break;
         case "lastname":
-          return (state.lastName = action.type.value);
+          draft.lastName = value;
+          break;
         case "street":
-          return (state.lastName = action.type.value);
+          draft.lastName = value;
+          break;
         case "city":
-          return (state.lastName = action.type.value);
+          draft.lastName = value;
+          break;
       }
     },
   },
 });
 
-// export des données des actions
+// export les actions
 export const { onchange } = InputTextSlice.actions;
 
 // export des données du reducer

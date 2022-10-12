@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { InputText } from "@yan_coquoz/react_input";
 import { useDispatch } from "react-redux";
-import { onchange } from "components/InputText/InputTextSlice";
+import { onchange } from "features/InputTextSlice";
 import "./style.scss";
 
 const Input = ({ idName, label, isRequired, myClass }) => {
