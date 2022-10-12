@@ -1,0 +1,48 @@
+@use "../../../styles/_vars" as v;
+fieldset {
+  width: 250px;
+  background: v.$color;
+}
+legend {
+  text-align: left;
+}
+.home_container {
+  display: flex;
+  flex-direction: column;
+  & h1 {
+    color: v.$color;
+  }
+  &__box_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+    & div {
+      align-self: center;
+      & a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: v.$color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__box_form {
+    margin: 2rem auto;
+    display: flex;
+    width: 50vw;
+    &__form {
+      display: flex;
+      justify-content: space-around;
+      gap: 3rem;
+      &__box_button {
+        align-self: end;
+        & button {
+          padding: 0.7rem 1rem;
+        }
+      }
+    }
+  }
+}

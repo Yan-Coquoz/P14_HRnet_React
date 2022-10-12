@@ -1,14 +1,11 @@
-// @ts-nocheck
-import { applyMiddleware, compose, legacy_createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import InputTextReducer from "components/InputText/InputTextSlice"; // route du reducer en lien avec le composant
+import SelectReducer from "components/Select/SelectSlice";
 
-import reducer from "../reducer";
-
-const composeEnhancers =
-  (typeof window !== "undefined" &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
-
-const enhancers = composeEnhancers(applyMiddleware());
-
-const store = legacy_createStore(reducer, enhancers);
+const store = configureStore({
+  reducer: {
+    INPUT_TEXT: InputTextReducer,
+    SELECT: SelectReducer,
+  },
+});
 export default store;

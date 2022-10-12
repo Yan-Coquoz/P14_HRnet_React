@@ -1,12 +1,20 @@
 import React from "react";
-import PropTypes, { object } from "prop-types";
+import PropTypes from "prop-types";
 import Select from "@yan_coquoz/react_input/dist/components/Select";
 import "./style.scss";
+import { onchange } from "./SelectSlice";
+import { useDispatch } from "react-redux";
 
-const Selector = ({ idName, name, isRequired, sendValue, tabs }) => {
+const Selector = ({ idName, name, isRequired, tabs }) => {
+  const dispatch = useDispatch();
+  function sendValue(key, value) {
+    console.log(key, value);
+    dispatch(onchange({ key, value }));
+  }
+
   return (
     <Select
-      idLabel={idName}
+      idName={idName}
       name={name}
       isRequired={isRequired}
       sendValue={sendValue}
@@ -14,11 +22,11 @@ const Selector = ({ idName, name, isRequired, sendValue, tabs }) => {
     />
   );
 };
+
 Selector.propTypes = {
   idName: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   isRequired: PropTypes.bool.isRequired,
-  sendValue: PropTypes.func.isRequired,
-  tabs: PropTypes.arrayOf(object).isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default Selector;
