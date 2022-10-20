@@ -5,6 +5,7 @@ export const depts = [
   { name: "human ressources" },
   { name: "legal" },
 ];
+
 export const states = [
   {
     name: "Alabama",

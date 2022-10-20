@@ -1,55 +1,36 @@
 import React from "react";
 // import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import StickyHeadTable from "components/Table";
 import Header from "components/Header";
+import { useSelector } from "react-redux";
+import { sendEmployees } from "features/HomeSlice";
 import "./style.scss";
 
 const EmployeList = () => {
-  // écrire le code ici
+  const getDatas = useSelector(sendEmployees);
+  console.log(getDatas);
   return (
     <div>
       <Header>Current Employees</Header>
       <nav>
-        un select (nombre d'entrée visible dans le tableau) / un input searchbar
-        (recherche des personnes)
+        <p>Showing {getDatas.length} entries</p> et
+        <div>
+          <label htmlFor="search">Search</label>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="employee"
+          />
+        </div>
       </nav>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <table>
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Start Date</th>
-              <th>Department</th>
-              <th>Date of Birth</th>
-              <th>Street</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
       <div>
-        <p>Nombres visible des personnes dans le tableau courant</p>
-        <div> pagination des pages du tableau</div>
+        <StickyHeadTable />
       </div>
-
-      <Link to="/">Home</Link>
+      <div>
+        <Link to="/">Home</Link>
+      </div>
     </div>
   );
 };

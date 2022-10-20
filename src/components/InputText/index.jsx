@@ -1,24 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { InputText } from "@yan_coquoz/react_input";
-import { useDispatch } from "react-redux";
-import { onchange } from "features/InputTextSlice";
 import "./style.scss";
 
 const Input = ({ idName, label, isRequired, myClass }) => {
-  const dispatch = useDispatch();
-
-  const handleChange = (key, value) => {
-    dispatch(onchange({ key, value }));
-  };
-
   return (
     <InputText
       idName={idName}
       label={label}
       isRequired={isRequired}
-      sendValue={handleChange}
       myClass={myClass}
+      toUpperCase={true}
     />
   );
 };

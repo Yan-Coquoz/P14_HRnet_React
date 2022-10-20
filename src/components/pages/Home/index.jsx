@@ -5,35 +5,25 @@ import { Button, Modale } from "@yan_coquoz/react_input";
 import Header from "components/Header";
 import Input from "components/InputText";
 import InputNum from "components/InputNumber";
+import Dater from "components/DatePick";
 import Selector from "components/Select";
 import { Link } from "react-router-dom";
 import { submitForm } from "features/HomeSlice";
 import { depts, states } from "datas";
 import "./style.scss";
+import { formValue } from "Utils";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
-  function handleClose() {
-    setIsOpen(!isOpen);
-  }
+
   useEffect(() => {});
 
   function handleSubmitForm(evt) {
     evt.preventDefault();
-    const formValues = {
-      firstName: evt.target[0].value,
-      lastName: evt.target[1].value,
-      street: evt.target[3].value,
-      city: evt.target[4].value,
-      state: evt.target[5].value,
-      zipCode: evt.target[6].value,
-      department: evt.target[7].value,
-    };
-
+    const formValues = formValue(evt);
+    // console.log(formValues);
     dispatch(submitForm(formValues));
-
-    handleClose();
   }
   return (
     <div className="home_container">
@@ -52,25 +42,29 @@ const Home = () => {
           <div>
             <div className="home_container__box_form__form__box_one">
               <Input
-                idName={"firstname"}
+                idName={"first_name"}
                 label={"first name"}
                 isRequired={false}
                 myClass={"input_text"}
               />
               <Input
-                idName={"lastname"}
+                idName={"last_name"}
                 label={"last name"}
                 isRequired={false}
                 myClass={"input_text"}
               />
-              <div>
-                <label htmlFor="birth_date">Date of birth</label>
-                <input type="date" name="" id="birth_date" />
-              </div>
-              <div>
-                <label htmlFor="death_date">Start date</label>
-                <input type="date" name="" id="death_date" />
-              </div>
+            </div>
+            <div>
+              <Dater
+                idName="birth_date"
+                label="birth date"
+                toUpperCase={true}
+              />
+              <Dater
+                idName="start_date"
+                label="start date"
+                toUpperCase={true}
+              />
             </div>
             <fieldset className="home_container__box_form__form__box_two">
               <legend>Address</legend>
@@ -115,7 +109,7 @@ const Home = () => {
       </div>
       <Modale
         message="Create Employee"
-        open={() => handleClose()}
+        open={() => setIsOpen(!isOpen)}
         sendStyle={`#${Math.floor(Math.random() * 0xffffff).toString(16)}`}
       />
     </div>

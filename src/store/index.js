@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import InputTextReducer from "features/InputTextSlice"; // route du reducer en lien avec le composant
+import InputTextReducer from "features/InputTextSlice"; // route du reducer en lien avec le Slice du composant
 import SelectReducer from "features/SelectSlice";
 import HomeReducer from "features/HomeSlice";
+import InputNumReducer from "features/InputNumSlice";
 
 const store = configureStore({
   reducer: {
     INPUT_TEXT: InputTextReducer,
-    SELECT: SelectReducer,
     HOME: HomeReducer,
+    SELECT: SelectReducer,
+    INPUT_NUM: InputNumReducer,
   },
 });
 export default store;

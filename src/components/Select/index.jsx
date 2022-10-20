@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Select from "@yan_coquoz/react_input/dist/components/Select";
-import "./style.scss";
-import { onchange } from "../../features/SelectSlice";
+import { onchange } from "features/SelectSlice";
 import { useDispatch } from "react-redux";
+import "./style.scss";
 
 const Selector = ({ idName, name, isRequired, tabs }) => {
   const dispatch = useDispatch();
   function sendValue(key, value) {
-    console.log(key, value);
+    // console.log(key, value);
     dispatch(onchange({ key, value }));
   }
 

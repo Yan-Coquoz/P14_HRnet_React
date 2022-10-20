@@ -1,6 +1,6 @@
-import { createSlice, createAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 // action
-export const on_change = createAction("ON_CHANGE");
+// export const on_change = createAction("ON_CHANGE");
 
 const initialState = {
   state: "",
@@ -8,15 +8,18 @@ const initialState = {
 };
 
 export const SelectSlice = createSlice({
-  name: "SELECT",
+  name: "select",
   initialState,
   reducers: {
-    onchange: (state, action) => {
+    onchange: (draft, action) => {
       const { key, value } = action.payload;
-      if (key === "state") {
-        return (state.state = value);
+      // console.log(action.type);
+      // console.log(action.payload);
+      // console.log(key, value);
+      if (key === "states") {
+        draft.state = value;
       } else if (key === "department") {
-        return (state.department = value);
+        draft[key] = value;
       }
     },
   },

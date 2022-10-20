@@ -34,8 +34,12 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.9",
     "@reduxjs/toolkit": "^1.8.6",
-    "@yan_coquoz/react_input": "^0.1.23",
+    "@yan_coquoz/react_input": "^0.1.24",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

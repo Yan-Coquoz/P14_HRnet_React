@@ -25,10 +25,10 @@ export const InputTextSlice = createSlice({
           draft.lastName = value;
           break;
         case "street":
-          draft.lastName = value;
+          draft.street = value;
           break;
         case "city":
-          draft.lastName = value;
+          draft.city = value;
           break;
       }
     },
