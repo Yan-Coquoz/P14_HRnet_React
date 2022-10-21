@@ -56,7 +56,7 @@ const Home = () => {
             </div>
             <div>
               <Dater
-                idName="birth_date"
+                idName="date_of_birth"
                 label="birth date"
                 toUpperCase={true}
               />

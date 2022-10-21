@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   employee: [
     {
-      firstName: "John",
+      firstName: "Johnny",
       lastName: "Doe",
-      birthDate: "1976-10-18",
+      dateOfBirth: "1976-10-18",
       startDate: "2022-12-17",
       street: "35, selfy road",
       city: "Clearwater",
-      state: "Minnesota",
+      states: "Minnesota",
       zipCode: "56450",
       department: "Engineering",
     },

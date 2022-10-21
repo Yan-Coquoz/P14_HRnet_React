@@ -8,13 +8,12 @@ import { sendEmployees } from "features/HomeSlice";
 import "./style.scss";
 
 const EmployeList = () => {
-  const getDatas = useSelector(sendEmployees);
-  console.log(getDatas);
+  const datas = useSelector(sendEmployees);
+
   return (
     <div>
       <Header>Current Employees</Header>
       <nav>
-        <p>Showing {getDatas.length} entries</p> et
         <div>
           <label htmlFor="search">Search</label>
           <input
@@ -26,7 +25,7 @@ const EmployeList = () => {
         </div>
       </nav>
       <div>
-        <StickyHeadTable />
+        <StickyHeadTable datas={datas} />
       </div>
       <div>
         <Link to="/">Home</Link>
