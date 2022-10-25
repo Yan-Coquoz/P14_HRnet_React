@@ -22,7 +22,7 @@ const Home = () => {
   function handleSubmitForm(evt) {
     evt.preventDefault();
     const formValues = formValue(evt);
-    // console.log(formValues);
+    console.log(formValues);
     dispatch(submitForm(formValues));
   }
   return (
@@ -39,71 +39,75 @@ const Home = () => {
           onSubmit={handleSubmitForm}
           className="home_container__box_form__form"
         >
-          <div>
-            <div className="home_container__box_form__form__box_one">
-              <Input
-                idName={"first_name"}
-                label={"first name"}
-                isRequired={false}
-                myClass={"input_text"}
-              />
-              <Input
-                idName={"last_name"}
-                label={"last name"}
-                isRequired={false}
-                myClass={"input_text"}
-              />
+          <div className="home_container__box_form__form__container">
+            <div className="home_container__box_form__form__container__box_one">
+              <div className="home_container__box_form__form__container__box_one__input_bloc">
+                <Input
+                  idName={"first_name"}
+                  label={"first name"}
+                  isRequired={false}
+                  myClass={"input_text"}
+                />
+                <Input
+                  idName={"last_name"}
+                  label={"last name"}
+                  isRequired={false}
+                  myClass={"input_text"}
+                />
+              </div>
+              <div className="home_container__box_form__form__container__box_one__input_bloc">
+                <Dater
+                  idName="birthDate"
+                  label="birth date"
+                  toUpperCase={true}
+                />
+                <Dater
+                  idName="start_date"
+                  label="start date"
+                  toUpperCase={true}
+                />
+              </div>
             </div>
-            <div>
-              <Dater
-                idName="date_of_birth"
-                label="birth date"
-                toUpperCase={true}
-              />
-              <Dater
-                idName="start_date"
-                label="start date"
-                toUpperCase={true}
-              />
+            <div className="home_container__box_form__form__container__box_two">
+              <fieldset className="home_container__box_form__form__container__box_two__input_bloc">
+                <legend> Address </legend>
+                <Input
+                  idName={"street"}
+                  label={"street"}
+                  isRequired={false}
+                  myClass={"input_text"}
+                />
+                <Input
+                  idName={"city"}
+                  label={"city"}
+                  isRequired={false}
+                  myClass={"input_text"}
+                />
+                <Selector
+                  idName={"states"}
+                  name={"states"}
+                  isRequired={true}
+                  tabs={states}
+                />
+                <InputNum
+                  idName={"zip_code"}
+                  label={"zip code"}
+                  isRequired={false}
+                  myClass={"input_text"}
+                />
+              </fieldset>
+              <div className="home_container__box_form__form__container__box_two__input_bloc">
+                <Selector
+                  idName={"department"}
+                  name={"department"}
+                  isRequired={true}
+                  tabs={depts}
+                />
+                <div className="home_container__box_form__form__container__input_button">
+                  <Button type={"submit"}>Save</Button>
+                </div>
+              </div>
             </div>
-            <fieldset className="home_container__box_form__form__box_two">
-              <legend>Address</legend>
-              <Input
-                idName={"street"}
-                label={"street"}
-                isRequired={false}
-                myClass={"input_text"}
-              />
-              <Input
-                idName={"city"}
-                label={"city"}
-                isRequired={false}
-                myClass={"input_text"}
-              />
-              <Selector
-                idName={"states"}
-                name={"states"}
-                isRequired={true}
-                tabs={states}
-              />
-              <InputNum
-                idName={"zip_code"}
-                label={"zip code"}
-                isRequired={false}
-                myClass={"input_text"}
-              />
-            </fieldset>
-            <div className="home_container__box_form__form__box_three">
-              <Selector
-                idName={"department"}
-                name={"department"}
-                isRequired={true}
-                tabs={depts}
-              />
-            </div>
-          </div>
-          <div className="home_container__box_form__form__box_button">
-            <Button type={"submit"}>Save</Button>
           </div>
         </form>
       </div>

@@ -5,7 +5,7 @@ const initialState = {
     {
       firstName: "Johnny",
       lastName: "Doe",
-      dateOfBirth: "1976-10-18",
+      birthDate: "1976-10-18",
       startDate: "2022-12-17",
       street: "35, selfy road",
       city: "Clearwater",
@@ -21,10 +21,10 @@ export const HomeSlice = createSlice({
   initialState,
   reducers: {
     submitForm: (draft, action) => {
-      console.log("draft ", draft.employee);
+      // console.log("draft ", draft.employee);
       console.log(action.payload);
       draft.employee.push(action.payload);
-      console.log(draft.employee);
+      // console.log(draft.employee);
     },
   },
 });

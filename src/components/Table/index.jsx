@@ -25,7 +25,7 @@ const columns = [
     minWidth: 100,
     align: "right",
   },
-  { id: "dateOfBirth", label: "birth date", minWidth: 100 },
+  { id: "birthDate", label: "birth date", minWidth: 100 },
 
   {
     id: "street",
@@ -39,7 +39,7 @@ const columns = [
     id: "zipCode",
     label: "zip code",
     minWidth: 100,
-    format: (value) => +value.toFixed(0),
+    format: (value) => value,
   },
 ];
 
@@ -48,7 +48,7 @@ function createData(
   lastName,
   startDate,
   department,
-  dateOfBirth,
+  birthDate,
   street,
   city,
   states,
@@ -59,7 +59,7 @@ function createData(
     lastName,
     startDate,
     department,
-    dateOfBirth,
+    birthDate,
     street,
     city,
     states,
@@ -100,7 +100,7 @@ export default function StickyHeadTable({ datas }) {
           lastName,
           startDate,
           department,
-          dateOfBirth,
+          birthDate,
           street,
           city,
           states,
@@ -113,7 +113,7 @@ export default function StickyHeadTable({ datas }) {
             lastName,
             startDate,
             department,
-            dateOfBirth,
+            birthDate,
             street,
             city,
             states,
