@@ -1,0 +1,81 @@
+@media screen and (max-width: 1045px) {
+  body {
+    height: 1100px;
+  }
+  .home_container {
+    &__box_header {
+      justify-content: space-around;
+    }
+    &__box_form__form__container {
+      justify-content: center;
+      &__box_one,
+      &__box_two {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      &__box_one {
+        width: 272px;
+      }
+      &__box_two {
+        margin-bottom: 2rem;
+      }
+      &__box_one__input_bloc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      &__box_two__input_bloc,
+      &__box_one__input_bloc {
+        padding-bottom: 2rem;
+      }
+      &__box_two__input_bloc:nth-child(2) {
+        & .select_container {
+          margin: 0 auto;
+        }
+      }
+      &__input_button {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: 1020px;
+  }
+  .home_container {
+    &__box_header {
+      justify-content: center;
+      gap: 5rem;
+    }
+    &__box_form__form__container {
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  body {
+    height: 100%;
+  }
+  .App {
+    margin: 0 auto;
+  }
+  .home_container {
+    &__box_form__form {
+      margin-bottom: 2rem;
+      &__container {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .main_logo {
+    animation: spin-logo infinite 59s linear;
+  }
+}

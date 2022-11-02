@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   employee: [
+    // fake datas
     {
-      firstName: "Johnny",
+      firstName: "John",
       lastName: "Doe",
       birthDate: "1976-10-18",
       startDate: "2022-12-17",
@@ -13,6 +14,17 @@ const initialState = {
       zipCode: "56450",
       department: "Engineering",
     },
+    {
+      firstName: "Jane",
+      lastName: "Doe",
+      birthDate: "1979-01-23",
+      startDate: "2022-12-17",
+      street: "35, long street",
+      city: "Chicago",
+      states: "Illinois",
+      zipCode: "56450",
+      department: "Manager",
+    },
   ],
 };
 
@@ -21,10 +33,8 @@ export const HomeSlice = createSlice({
   initialState,
   reducers: {
     submitForm: (draft, action) => {
-      // console.log("draft ", draft.employee);
       console.log(action.payload);
       draft.employee.push(action.payload);
-      // console.log(draft.employee);
     },
   },
 });

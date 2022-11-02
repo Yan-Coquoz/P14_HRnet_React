@@ -1,0 +1,47 @@
+@use "../utils/vars" as v;
+
+#root {
+  width: 100%;
+}
+
+body {
+  font-family: "Fira Code", "Times New Roman", Times, serif;
+  background-color: #eeeeee9a;
+  background: no-repeat url(../assets/graphs3.jpg);
+  background-size: cover;
+  height: 1250px;
+  width: 100%;
+}
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  text-shadow: 1px 1px 1px #fff;
+}
+fieldset {
+  width: 250px;
+  border: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+legend {
+  position: static;
+  text-align: left;
+  color: #fff;
+  text-shadow: v.$textShadowBlack;
+}
+input,
+select {
+  border: 2px solid #000 !important;
+  border-radius: 5px;
+  padding: 0.5rem;
+  min-width: 200px;
+}
+input:focus,
+select:focus:hover {
+  outline: none;
+  border: 3px solid v.$color !important;
+}
+label {
+  color: #fff;
+  text-shadow: v.$textShadowBlack;
+}

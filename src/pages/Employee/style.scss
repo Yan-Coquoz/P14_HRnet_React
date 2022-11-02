@@ -1,0 +1,11 @@
+.employee_container {
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  &__table {
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}

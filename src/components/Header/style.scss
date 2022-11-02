@@ -1,15 +1,10 @@
+.header_container {
+  width: 50%;
+}
 .main_logo_container {
-  margin-top: 20px;
+  width: 80%;
 }
 .main_logo {
-  height: 10vh;
-}
-
-@keyframes spin-logo {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  height: 14vh;
+  object-fit: cover;
 }

@@ -1,0 +1,22 @@
+@use "../utils/vars" as v;
+.link_bloc {
+  align-self: center;
+  & a {
+    border: v.$blackborder;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-shadow: v.$textShadowBlack;
+
+    &:hover {
+      transition: 0.2s;
+      color: v.$colorLight;
+      font-weight: bold;
+      box-shadow: v.$shadowBlack;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

@@ -6,8 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "prettier",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hook/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,22 +15,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react"],
   "rules": {
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"],
-    "no-tabs": ["error", { "allowIndentationTabs": false }],
-    "react/no-unescaped-entities": 0,
     "react/react-in-jsx-scope": 0,
     "react/prop-types": 0,
-    "react-hooks/exhaustive-deps": 1,
+    "react-hooks/exhaustive-deps": "1",
     "react-hooks/rules-of-hooks": "error",
-    "no-duplicate-imports": "error",
-
-    "array-bracket-newline": ["error", { "multiline": true }],
-    "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
-    "no-use-before-define": 0,
-    "radix": "error",
-    "no-alert": "error"
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
   }
 }

@@ -1,19 +1,17 @@
-import Home from "components/pages/Home";
-import EmployeList from "components/pages/EmployeList";
-import Error from "components/pages/Error";
+import Home from "../../pages/Home";
+import Employee from "../../pages/Employee";
+import Error from "../../pages/Error";
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/employee-list" element={<EmployeList />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/employee-list" element={<Employee />} />
+      <Route path="*" element={<Error />} />
+    </Routes>
   );
-};
+}
 
 export default App;

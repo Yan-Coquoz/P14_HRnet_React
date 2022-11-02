@@ -1,59 +1,42 @@
 {
-  "name": "hrnet",
-  "author": {
-    "name": "Yan Coquoz",
-    "email": "yan.coquoz@gmail.com"
-  },
-  "version": "0.1.0",
+  "name": "p14-hrnet-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "clean": "rm -rf build dist docs",
     "clean:all": "rm -fr node_modules build dist docs package-lock.json",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
-    "@mui/material": "^5.10.9",
+    "@mui/material": "^5.10.12",
     "@reduxjs/toolkit": "^1.8.6",
-    "@yan_coquoz/react_input": "^0.1.24",
+    "@yan_coquoz/react_input": "^0.1.27",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.3",
+    "react": "^18.2.0",
     "redux": "^4.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.21.0",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.2.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.4"
+    "prettier": "2.7.1",
+    "sass": "^1.55.0",
+    "vite": "^3.2.0"
   }
 }

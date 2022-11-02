@@ -8,38 +8,40 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { fromLowerToUpperCase } from "Utils";
+import { fromLowerToUpperCase } from "../../utils/functions";
+import "./style.scss";
 
 const columns = [
-  { id: "firstName", label: "first name", minWidth: 100 },
+  { id: "firstName", label: "first name", align: "center", minWidth: 100 },
   {
     id: "lastName",
     label: "last name",
     minWidth: 100,
+    align: "center",
     format: (value) => fromLowerToUpperCase(value),
   },
-  { id: "startDate", label: "start date", minWidth: 100 },
+  { id: "startDate", label: "start date", align: "center", minWidth: 100 },
   {
     id: "department",
     label: "department",
     minWidth: 100,
-    align: "right",
+    align: "center",
   },
-  { id: "birthDate", label: "birth date", minWidth: 100 },
+  { id: "birthDate", label: "birth date", minWidth: 100, align: "center" },
 
   {
     id: "street",
     label: "street",
     minWidth: 100,
-    align: "right",
+    align: "center",
   },
-  { id: "city", label: "city", minWidth: 100 },
-  { id: "states", label: "state", minWidth: 100 },
+  { id: "city", label: "city", minWidth: 100, align: "center" },
+  { id: "states", label: "state", minWidth: 100, align: "center" },
   {
     id: "zipCode",
     label: "zip code",
     minWidth: 100,
-    format: (value) => value,
+    align: "center",
   },
 ];
 
@@ -67,34 +69,17 @@ function createData(
   };
 }
 
-const rows = [
-  // exemple de rendu
-  createData(
-    "John",
-    "Doe",
-    "15-12-2022",
-    "sales",
-    "18-10-1976",
-    "22 long road",
-    "Houston",
-    "Texas",
-    56324,
-  ),
-];
+const rows = [];
 
 export default function StickyHeadTable({ datas }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [isDatas, setIsDatas] = React.useState(false);
   React.useEffect(() => {
-    // console.log(isDatas);
     if (datas.length > 0 && Array.isArray(datas)) {
       setIsDatas(true);
-      // console.log("rows ", rows);
-      // console.log("datas length ", datas.length);
       rows.length = 0;
       for (let i = 0; i < datas.length; i++) {
-        // console.log("datas ", datas[i]);
         const {
           firstName,
           lastName,
@@ -157,7 +142,13 @@ export default function StickyHeadTable({ datas }) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row, key) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={key}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={key}
+                    className={key % 2 === 0 ? "even" : ""}
+                  >
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

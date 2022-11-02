@@ -1,5 +1,25 @@
 {
   "docwriter.language": "French",
-  "docwriter.progress.trackTypes": true,
-  "docwriter.progress.trackClasses": true
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorSmoothCaretAnimation": false,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace",
+  "npm.runSilent": true,
+  "javascript.validate.enable": false,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "USE_GITIGNORE": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/code-search": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/*.build": true,
+    "**/.gh-pages": true
+  },
+  "workbench.colorTheme": "Winter is Coming (Dark Black)"
 }

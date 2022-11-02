@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./style.scss";
 
 const Error = () => {
   // écrire le code ici

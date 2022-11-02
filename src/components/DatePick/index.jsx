@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DatePicker } from "@yan_coquoz/react_input";
+import "./style.scss";
 
 const Dater = ({ idName, label, toUpperCase }) => {
   return (
