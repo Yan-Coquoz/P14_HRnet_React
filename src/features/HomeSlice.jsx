@@ -43,6 +43,13 @@ export const { submitForm } = HomeSlice.actions;
 
 // Possibilité : export d'UNE valeur du state
 
+/**
+ * il prend l'état et renvoie le tableau des employés de l'état
+ *
+ * @param   {ArrayOfObject}  state  Le state employee.
+ *
+ * @return  {ArrayOfObject}         L'objet employé de l'état.
+ */
 export const sendEmployees = (state) => {
   // console.log(state);
   return state.HOME.employee;

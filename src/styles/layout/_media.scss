@@ -1,3 +1,4 @@
+@use "../utils/vars" as v;
 @media screen and (max-width: 1045px) {
   body {
     height: 1100px;
@@ -48,8 +49,7 @@
   }
   .home_container {
     &__box_header {
-      justify-content: center;
-      gap: 5rem;
+      display: block;
     }
     &__box_form__form__container {
       justify-content: center;
@@ -58,7 +58,7 @@
   }
 }
 @media screen and (max-width: 640px) {
-  body {
+  body:has(.home_container) {
     height: 100%;
   }
   .App {
@@ -71,6 +71,12 @@
         align-items: center;
         flex-direction: column;
       }
+    }
+  }
+  .link_bloc {
+    align-self: center;
+    & a:hover {
+      // text-shadow: v.$textShadowWhite;
     }
   }
 }

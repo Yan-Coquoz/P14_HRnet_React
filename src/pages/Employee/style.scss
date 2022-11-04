@@ -1,9 +1,14 @@
 .employee_container {
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+  width: 90%;
+  margin: 2rem auto;
+  &__header {
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
   }
+
   &__table {
     border: 1px solid black;
     border-radius: 5px;

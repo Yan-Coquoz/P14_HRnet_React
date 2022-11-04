@@ -8,7 +8,7 @@ import "./style.scss";
 const InputNum = ({ idName, label, isRequired, myClass }) => {
   const dispatch = useDispatch();
   function sendValue(key, value) {
-    console.log(key, value);
+    // console.log(key, value);
     // const regexCP = /^(\\d{5})$/;
     dispatch(onchange({ key, value }));
   }
