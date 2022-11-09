@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./style.scss";
 const Error = () => {
   // écrire le code ici
   return (
-    <div>
-      <h1>Error 404</h1>
-      <p>Not Found</p>
-      <div>
+    <div className="error_container">
+      <h1 className="error_container__title">Error 404</h1>
+      <p className="error_container__title__para">Page Not Found</p>
+      <div className="link_bloc error_container__link">
         <Link to="/">Back to home</Link>
       </div>
     </div>

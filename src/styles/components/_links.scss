@@ -11,9 +11,10 @@
     transition: all 0.25s ease-in;
 
     &:hover {
-      color: v.$colorLight;
+      color: white;
       font-weight: bold;
       box-shadow: v.$shadowBlack;
+      background: v.$colorLight;
     }
     &:active {
       transform: scale(0.9);

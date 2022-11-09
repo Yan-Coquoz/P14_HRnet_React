@@ -1,0 +1,18 @@
+.error_container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  &__title {
+    width: 100%;
+    text-align: center;
+    &__para {
+      font-weight: bold;
+      text-align: center;
+      font-size: larger;
+    }
+  }
+  &__link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

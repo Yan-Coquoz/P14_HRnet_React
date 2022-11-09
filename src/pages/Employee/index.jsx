@@ -8,46 +8,38 @@ import { sendEmployees } from "../../features/HomeSlice";
 import "./style.scss";
 
 const Employee = () => {
-  const datas = useSelector(sendEmployees);
-  const [isSearching, setIsSearching] = React.useState(false);
-  const [employeeDatas, setEmployeeDatas] = React.useState([]);
-  const [inputValue, setInputValue] = React.useState("");
-
-  // TODO faire le rendu de l'input en temps réel sur le tableau
-
-  /**
-   * Si le champ est vide :  on nettoie le tableau et isSearching est à false.
-   *
-   * Si on rempli le champ : a chaque caractères on lance un recherche et le nouveau tableau est rempli de la recherche, isSearching à true
-   */
+  const stateDatas = useSelector(sendEmployees);
+  const ref = React.useRef();
+  const [renderDataTable, setRenderDataTable] = React.useState(
+    <StickyHeadTable datas={stateDatas} />,
+  );
 
   function getInputSearch(evt) {
-    setInputValue(evt.target.value.toLowerCase());
-    setIsSearching(true);
-    if (inputValue.length === 0) {
-      renderTable();
-      setIsSearching(false);
-    }
-  }
-
-  function renderTable() {
+    const inputValue = evt.target.value.toLowerCase();
     const _datas = [];
-    if (inputValue.length !== 0 && isSearching) {
-      datas.filter((element) => {
-        if (
-          element?.firstName.toLowerCase().includes(inputValue.toLowerCase())
-        ) {
-          _datas.push(element);
+
+    if (inputValue !== "") {
+      stateDatas.map((data) => {
+        if (data.firstName.toLowerCase().includes(inputValue)) {
+          _datas.push(data);
         }
       });
-      return <StickyHeadTable datas={_datas} />;
+      renderTable(_datas);
     } else {
-      _datas.length = 0;
-      setIsSearching(false);
-      return <StickyHeadTable datas={datas} />;
+      renderTable();
     }
   }
 
+  function renderTable(_data = []) {
+    if (_data.length === 0 && ref.current.value === "") {
+      setRenderDataTable(<StickyHeadTable datas={stateDatas} />);
+    } else {
+      setRenderDataTable(<StickyHeadTable datas={_data} />);
+    }
+  }
+  React.useEffect(() => {
+    renderTable();
+  }, [ref.current?.value]);
   return (
     <div className="employee_container">
       <div className="employee_container__header">
@@ -56,10 +48,11 @@ const Employee = () => {
           <div>
             <label htmlFor="search"></label>
             <input
+              ref={ref}
               type="search"
               name="search"
               id="search"
-              onChange={getInputSearch}
+              onChange={(evt) => getInputSearch(evt)}
               placeholder="search employee"
               autoFocus
             />
@@ -70,7 +63,11 @@ const Employee = () => {
         </nav>
       </div>
       <div className="employee_container__table">
-        {isSearching ? renderTable() : <StickyHeadTable datas={datas} />}
+        {ref.current?.value === "" ? (
+          <StickyHeadTable datas={stateDatas} />
+        ) : (
+          renderDataTable
+        )}
       </div>
     </div>
   );
