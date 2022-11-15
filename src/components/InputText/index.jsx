@@ -5,31 +5,47 @@ import "../../styles/main.scss";
 import InputError from "../../components/InputError/inputError";
 
 const Input = ({ idName, label, isRequired, myClass }) => {
+  const [option, setOption] = React.useState("");
+
   function handleValue(_, value) {
-    const reg = /(^[A-Z]{1,18})\D$/gim;
-    console.log("regex", reg.test(value));
-    if (reg.test(value.toString())) {
-      renderTypeError("regex");
+    const regex = /(^[A-Z]{0,18})\D$/gim; // des caractères alphabétique compris entre 1 et 18 sans nombres
+    // sans required
+    if (!isRequired && regex.test(value.toString())) {
+      setOption("");
+    } else if (!isRequired && !regex.test(value.toString())) {
+      setOption("regex");
+    }
+    // avec required
+    if (isRequired) {
+      if (value.length <= 1 && regex.test(value.toString())) {
+        setOption("");
+      } else if (!regex.test(value.toString())) {
+        setOption("regex");
+      }
     }
   }
-  function renderTypeError(type) {
+
+  function renderTypeError(type = null) {
     const divError = document.querySelector(".error_container");
     const inputClass = document.querySelector(`#${myClass}`);
-    if (type === "required") {
+
+    if (type === "regex") {
       return (
         <InputError>
-          <strong>{`${label}`} is required with more than 2 characters </strong>
-        </InputError>
-      );
-    } else if (type === "regex") {
-      return (
-        <InputError>
-          <strong>{`${label}`} is not correct</strong>
+          <strong>{`${label} is not correct :`}</strong>
+          <ul>
+            <li>not long enough</li>
+            <li>must not contain numbers</li>
+            <li>must be between 1 and 18 characters</li>
+            <li>must not contain special characters</li>
+          </ul>
         </InputError>
       );
     }
-    return "";
+
+    return <InputError />;
   }
+
   return (
     <>
       <InputText
@@ -40,7 +56,7 @@ const Input = ({ idName, label, isRequired, myClass }) => {
         toUpperCase={true}
         sendValue={handleValue}
       />
-      {renderTypeError()}
+      {renderTypeError(option)}
     </>
   );
 };

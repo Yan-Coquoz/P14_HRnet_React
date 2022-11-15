@@ -18,8 +18,6 @@ const Home = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const dispatch = useDispatch();
 
-  React.useEffect(() => {});
-
   function handleSubmitForm(evt) {
     evt.preventDefault();
     setIsOpen(true);
@@ -32,6 +30,7 @@ const Home = (props) => {
     const formValues = formValue(evt);
     console.log(formValues);
     dispatch(submitForm(formValues));
+    form.reset();
   }
 
   // TODO Gestion des entrées (validation)
@@ -55,9 +54,10 @@ const Home = (props) => {
                 <Input
                   idName={"first_name"}
                   label={"first name"}
+                  isRequired={false}
                   myClass={"input_text"}
-                  isRequired={true}
                 />
+
                 <Input
                   idName={"last_name"}
                   label={"last name"}
