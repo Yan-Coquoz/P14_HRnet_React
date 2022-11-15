@@ -12,7 +12,7 @@ import InputNum from "../../components/InputNumber";
 import { submitForm } from "../../features/HomeSlice";
 import { states, depts } from "../../utils/datas";
 import { formValue } from "../../utils/functions";
-import "./style.scss";
+import "../../styles/main.scss";
 
 const Home = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -23,11 +23,18 @@ const Home = (props) => {
   function handleSubmitForm(evt) {
     evt.preventDefault();
     setIsOpen(true);
+    // test récup data avec FormData
+    const form = evt.target;
+    const formDatas = new FormData(form);
+    const firstName = formDatas.get("first_name"); // propriété name de l'input
+    console.log(firstName);
+    // fin de test
     const formValues = formValue(evt);
     console.log(formValues);
     dispatch(submitForm(formValues));
   }
 
+  // TODO Gestion des entrées (validation)
   return (
     <div className="home_container">
       <div className="home_container__box_header">
@@ -48,26 +55,28 @@ const Home = (props) => {
                 <Input
                   idName={"first_name"}
                   label={"first name"}
-                  isRequired={false}
                   myClass={"input_text"}
+                  isRequired={true}
                 />
                 <Input
                   idName={"last_name"}
                   label={"last name"}
                   isRequired={false}
                   myClass={"input_text"}
-                />{" "}
+                />
               </div>
               <div className="home_container__box_form__form__container__box_one__input_bloc">
                 <Dater
                   idName="birthDate"
                   label="birth date"
                   toUpperCase={true}
+                  placeh="birth date"
                 />
                 <Dater
                   idName="start_date"
                   label="start date"
                   toUpperCase={true}
+                  placeh="start date"
                 />
               </div>
             </div>

@@ -37,6 +37,8 @@ export const formValue = (evt) => {
   const values = [];
   const oneEmployee = {};
 
+  /* Boucler dans le formulaire et pousser le nom et la valeur de chaque entrée dans les tableaux
+  de propriétés et de valeurs. */
   for (let i = 0; i < evt.target.length - 1; i++) {
     if (evt.target[i].value !== "" && evt.target[i].name !== "") {
       props.push(toCamelCase(evt.target[i].name));
@@ -44,6 +46,7 @@ export const formValue = (evt) => {
     }
   }
 
+  /* Création d'un objet avec les propriétés et les valeurs du formulaire. */
   for (let i = 0; i < values.length; i++) {
     if (values[i] !== undefined && props[i].length !== 0) {
       oneEmployee[props[i]] = values[i];

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Select from "@yan_coquoz/react_input/dist/components/Select";
 import { onchange } from "../../features/SelectSlice";
 import { useDispatch } from "react-redux";
-import "./style.scss";
 
 const Selector = ({ idName, name, isRequired, tabs }) => {
   const dispatch = useDispatch();
@@ -13,14 +12,16 @@ const Selector = ({ idName, name, isRequired, tabs }) => {
   }
 
   return (
-    <Select
-      idName={idName}
-      name={name}
-      isRequired={isRequired}
-      sendValue={sendValue}
-      tabs={tabs}
-      toUpperCase={true}
-    />
+    <>
+      <Select
+        idName={idName}
+        name={name}
+        isRequired={isRequired}
+        sendValue={sendValue}
+        tabs={tabs}
+        toUpperCase={true}
+      />
+    </>
   );
 };
 

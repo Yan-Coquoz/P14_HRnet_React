@@ -5,7 +5,7 @@ import StickyHeadTable from "../../components/Table";
 import Header from "../../components/Header";
 import { useSelector } from "react-redux";
 import { sendEmployees } from "../../features/HomeSlice";
-import "./style.scss";
+import "../../styles/main.scss";
 
 const Employee = () => {
   const stateDatas = useSelector(sendEmployees);
@@ -17,7 +17,6 @@ const Employee = () => {
   function getInputSearch(evt) {
     const inputValue = evt.target.value.toLowerCase();
     const _datas = [];
-
     if (inputValue !== "") {
       stateDatas.map((data) => {
         if (data.firstName.toLowerCase().includes(inputValue)) {
@@ -37,9 +36,11 @@ const Employee = () => {
       setRenderDataTable(<StickyHeadTable datas={_data} />);
     }
   }
+
   React.useEffect(() => {
     renderTable();
   }, [ref.current?.value]);
+
   return (
     <div className="employee_container">
       <div className="employee_container__header">

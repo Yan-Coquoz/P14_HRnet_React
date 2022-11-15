@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { InputNumber } from "@yan_coquoz/react_input";
 import { onchange } from "../../features/InputNumSlice";
 import { useDispatch } from "react-redux";
-import "./style.scss";
+// import "./style.scss";
 
 const InputNum = ({ idName, label, isRequired, myClass }) => {
   const dispatch = useDispatch();
@@ -13,14 +13,16 @@ const InputNum = ({ idName, label, isRequired, myClass }) => {
     dispatch(onchange({ key, value }));
   }
   return (
-    <InputNumber
-      idName={idName}
-      label={label}
-      sendValue={sendValue}
-      isRequired={isRequired}
-      myClass={myClass}
-      toUpperCase={true}
-    />
+    <>
+      <InputNumber
+        idName={idName}
+        label={label}
+        sendValue={sendValue}
+        isRequired={isRequired}
+        myClass={myClass}
+        toUpperCase={true}
+      />
+    </>
   );
 };
 
