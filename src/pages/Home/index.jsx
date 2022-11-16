@@ -14,7 +14,7 @@ import { states, depts } from "../../utils/datas";
 import { formValue } from "../../utils/functions";
 import "../../styles/main.scss";
 
-const Home = (props) => {
+const Home = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const dispatch = useDispatch();
 
@@ -34,6 +34,12 @@ const Home = (props) => {
   }
 
   // TODO Gestion des entrées (validation)
+  /**
+   * InputText ✔
+   * InputNum
+   * Selector
+   * Dater
+   */
   return (
     <div className="home_container">
       <div className="home_container__box_header">
@@ -54,7 +60,7 @@ const Home = (props) => {
                 <Input
                   idName={"first_name"}
                   label={"first name"}
-                  isRequired={false}
+                  isRequired={true}
                   myClass={"input_text"}
                 />
 

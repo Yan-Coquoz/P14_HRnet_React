@@ -1,5 +1,5 @@
-import * as React from "react";
-// import PropTypes from "prop-types";
+import React, { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import StickyHeadTable from "../../components/Table";
 import Header from "../../components/Header";
@@ -11,7 +11,7 @@ const Employee = () => {
   const stateDatas = useSelector(sendEmployees);
   const ref = React.useRef();
   const [renderDataTable, setRenderDataTable] = React.useState(
-    <StickyHeadTable datas={stateDatas} />,
+    <StickyHeadTable datas={stateDatas} />
   );
 
   function getInputSearch(evt) {
@@ -37,7 +37,7 @@ const Employee = () => {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     renderTable();
   }, [ref.current?.value]);
 
@@ -73,7 +73,5 @@ const Employee = () => {
     </div>
   );
 };
-
-//  Employee.propTypes = {};
 
 export default Employee;

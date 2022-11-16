@@ -8,6 +8,7 @@
   "npm.runSilent": true,
   "javascript.validate.enable": false,
   "files.autoSave": "onFocusChange",
+
   "files.exclude": {
     "USE_GITIGNORE": true
   },

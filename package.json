@@ -10,7 +10,7 @@
     "clean": "rm -rf build dist docs",
     "clean:all": "rm -fr node_modules build dist docs package-lock.json",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "eslint  'src/**/*.{js,jsx,ts,tsx,json}' --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
@@ -38,5 +38,8 @@
     "prettier": "2.7.1",
     "sass": "^1.55.0",
     "vite": "^3.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }

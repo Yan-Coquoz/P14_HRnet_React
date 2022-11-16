@@ -55,3 +55,21 @@ export const formValue = (evt) => {
 
   return oneEmployee;
 };
+
+/**
+ * Il supprime l'attribut disabled du bouton et supprime la classe disabled du bouton.
+ */
+export function enableButton() {
+  const button = document.querySelector("button[type='submit']");
+  button?.removeAttribute("disabled");
+  button?.classList?.remove("disabled");
+}
+
+/**
+ * Il désactive le bouton d'envoi.
+ */
+export function disableButton() {
+  const button = document.querySelector("button[type='submit']");
+  button?.setAttribute("disabled", true);
+  button?.classList.add("disabled");
+}

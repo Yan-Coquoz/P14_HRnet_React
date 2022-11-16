@@ -37,14 +37,9 @@ yarn
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/prettier)
 - ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint-config-prettier) ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/Yan-Coquoz/P14_HRnet_React/dev/eslint-plugin-react)
 
-## Scripts ajoutés
-
-En plus des scripts natif de CRA, il y a :
-
-- `clean`     supprime les dossiers build, dist et docs.
-- `clean:all` supprime les dossiers node modules et build, dist ainsi que le fichier package-lock.json.
-
 ---
+
+## Challenge
 
 ### Besoins
 

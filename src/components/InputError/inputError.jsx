@@ -3,11 +3,7 @@ import React from "react";
 import "../../styles/components/_inputError.scss";
 
 const InputError = (props) => {
-  return (
-    <div className="error_container">
-      <span>{props.children}</span>
-    </div>
-  );
+  return <div className="input_error_container">{props.children}</div>;
 };
 
 export default InputError;
