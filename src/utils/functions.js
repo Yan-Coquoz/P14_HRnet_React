@@ -1,3 +1,5 @@
+import { zipCodePattern } from "./constante";
+
 /**
  * Il prend une chaîne, la convertit en minuscules, puis met en majuscule la première lettre de chaque
  * mot
@@ -72,4 +74,30 @@ export function disableButton() {
   const button = document.querySelector("button[type='submit']");
   button?.setAttribute("disabled", true);
   button?.classList.add("disabled");
+}
+
+/**
+ * Si le paramètre requis est vrai, ajoutez une étoile à la fin du paramètre d'étiquette. Sinon,
+ * renvoyez simplement le paramètre label
+ * @param {String} label - L'étiquette du champ
+ * @param {Boolean} required - vrai faux
+ * @returns le libellé et le * si le paramètre requis est vrai.
+ */
+export function addStar(label, required) {
+  if (required) {
+    return label + " *";
+  } else {
+    return label;
+  }
+}
+
+export function checkZipCode(value) {
+  console.log(zipCodePattern.test(value));
+  if (zipCodePattern.test(value)) {
+    enableButton();
+    return true;
+  } else {
+    disableButton();
+    return false;
+  }
 }

@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { InputText } from "@yan_coquoz/react_input";
 import { onlyTextRegex, adressRegex } from "../../utils/constante";
-import { enableButton, disableButton } from "../../utils/functions";
+import { enableButton, disableButton, addStar } from "../../utils/functions";
 import { renderInputTextError } from "../../utils/errors";
+
 import "../../styles/main.scss";
 
 const Input = ({ idName, label, isRequired, myClass }) => {
@@ -34,7 +35,7 @@ const Input = ({ idName, label, isRequired, myClass }) => {
     <>
       <InputText
         idName={idName}
-        label={label}
+        label={addStar(label, isRequired)}
         isRequired={isRequired}
         myClass={myClass}
         toUpperCase={true}

@@ -77,6 +77,7 @@ const Home = () => {
                   label="birth date"
                   toUpperCase={true}
                   placeh="birth date"
+                  isRequired={true}
                 />
                 <Dater
                   idName="start_date"
@@ -114,7 +115,7 @@ const Home = () => {
                     <InputNum
                       idName={"zip_code"}
                       label={"zip code"}
-                      isRequired={false}
+                      isRequired={true}
                       myClass={"input_text"}
                     />
                   </div>

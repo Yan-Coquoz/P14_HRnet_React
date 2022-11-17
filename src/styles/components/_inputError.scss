@@ -4,3 +4,11 @@
   margin-top: 0.5rem;
   max-height: fit-content;
 }
+
+// input Text
+input.error_type {
+  &:focus:hover {
+    border: 3px solid red !important;
+    outline: red !important;
+  }
+}

@@ -54,7 +54,7 @@ function createData(
   street,
   city,
   states,
-  zipCode,
+  zipCode
 ) {
   return {
     firstName,
@@ -102,8 +102,8 @@ export default function StickyHeadTable({ datas }) {
             street,
             city,
             states,
-            zipCode,
-          ),
+            zipCode
+          )
         );
       }
     } else {

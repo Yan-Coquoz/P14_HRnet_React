@@ -5,13 +5,13 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
   "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace",
-  "npm.runSilent": true,
-  "javascript.validate.enable": false,
-  "files.autoSave": "onFocusChange",
+  // "npm.runSilent": true,
+  // "javascript.validate.enable": false,
+  
 
-  "files.exclude": {
-    "USE_GITIGNORE": true
-  },
+  // "files.exclude": {
+  //   "USE_GITIGNORE": true
+  // },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -22,5 +22,5 @@
     "**/*.build": true,
     "**/.gh-pages": true
   },
-  "workbench.colorTheme": "Winter is Coming (Dark Black)"
+  "workbench.colorTheme": "One Monokai"
 }

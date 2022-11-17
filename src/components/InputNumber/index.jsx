@@ -3,25 +3,33 @@ import PropTypes from "prop-types";
 import { InputNumber } from "@yan_coquoz/react_input";
 import { onchange } from "../../features/InputNumSlice";
 import { useDispatch } from "react-redux";
+import { addStar, checkZipCode } from "../../utils/functions";
+import { renderInputNumberError } from "../../utils/errors";
 // import "./style.scss";
 
 const InputNum = ({ idName, label, isRequired, myClass }) => {
   const dispatch = useDispatch();
+  const [option, setOption] = React.useState("");
   function sendValue(key, value) {
-    // console.log(key, value);
-    // const regexCP = /^(\\d{5})$/;
-    dispatch(onchange({ key, value }));
+    console.log(key, value);
+    if (checkZipCode(value)) {
+      setOption("");
+      dispatch(onchange({ key, value }));
+    } else {
+      setOption("zipCode");
+    }
   }
   return (
     <>
       <InputNumber
         idName={idName}
-        label={label}
+        label={addStar(label, isRequired)}
         sendValue={sendValue}
         isRequired={isRequired}
         myClass={myClass}
         toUpperCase={true}
       />
+      {renderInputNumberError(label, option)}
     </>
   );
 };
