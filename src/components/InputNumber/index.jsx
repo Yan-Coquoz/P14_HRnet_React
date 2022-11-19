@@ -10,11 +10,12 @@ import { renderInputNumberError } from "../../utils/errors";
 const InputNum = ({ idName, label, isRequired, myClass }) => {
   const dispatch = useDispatch();
   const [option, setOption] = React.useState("");
-  function sendValue(key, value) {
-    console.log(key, value);
+
+  function sendValue(_key, _value) {
+    const value = +_value;
     if (checkZipCode(value)) {
       setOption("");
-      dispatch(onchange({ key, value }));
+      dispatch(onchange({ _key, value }));
     } else {
       setOption("zipCode");
     }

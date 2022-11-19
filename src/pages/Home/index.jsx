@@ -6,7 +6,7 @@ import { Button, Modale } from "@yan_coquoz/react_input";
 import Header from "../../components/Header";
 import Input from "../../components/InputText";
 import Dater from "../../components/DatePick";
-import Selector from "../../components/Select";
+import Select from "../../components/Select";
 import InputNum from "../../components/InputNumber";
 
 import { submitForm } from "../../features/HomeSlice";
@@ -25,18 +25,36 @@ const Home = () => {
     const form = evt.target;
     const formDatas = new FormData(form);
     const firstName = formDatas.get("first_name"); // propriété name de l'input
+    const state = formDatas.get("states");
+    const department = formDatas.get("department");
     console.log(firstName);
+    console.log(state, department);
     // fin de test
     const formValues = formValue(evt);
     console.log(formValues);
     dispatch(submitForm(formValues));
     form.reset();
   }
-
+  const selectState = {
+    idName: "states",
+    labelName: "state",
+    isRequired: false,
+    optValue: true,
+    tabs: states,
+    toUpperCase: true,
+  };
+  const selectDepartment = {
+    idName: "states",
+    labelName: "state",
+    isRequired: true,
+    optValue: false,
+    toUpperCase: false,
+    tabs: depts,
+  };
   // TODO Gestion des entrées (validation)
   /**
    * InputText ✔
-   * InputNum
+   * InputNum ✔
    * Selector
    * Dater
    */
@@ -106,12 +124,7 @@ const Home = () => {
                     />
                   </div>
                   <div>
-                    <Selector
-                      idName={"states"}
-                      name={"states"}
-                      isRequired={true}
-                      tabs={states}
-                    />
+                    <Select {...selectState} />
                     <InputNum
                       idName={"zip_code"}
                       label={"zip code"}
@@ -123,12 +136,7 @@ const Home = () => {
               </div>
 
               <div className="home_container__box_form__form__container__box_two__input_bloc">
-                <Selector
-                  idName={"department"}
-                  name={"department"}
-                  isRequired={true}
-                  tabs={depts}
-                />
+                <Select {...selectDepartment} />
                 <div className="home_container__box_form__form__container__input_button">
                   <Button type={"submit"}>Save</Button>
                 </div>

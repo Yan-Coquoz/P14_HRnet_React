@@ -18,18 +18,18 @@ export const InputTextSlice = createSlice({
       const { key, value } = action.payload;
 
       switch (key) {
-        case "firstname":
-          draft.firstName = value;
-          break;
-        case "lastname":
-          draft.lastName = value;
-          break;
-        case "street":
-          draft.street = value;
-          break;
-        case "city":
-          draft.city = value;
-          break;
+      case "firstname":
+        draft.firstName = value;
+        break;
+      case "lastname":
+        draft.lastName = value;
+        break;
+      case "street":
+        draft.street = value;
+        break;
+      case "city":
+        draft.city = value;
+        break;
       }
     },
   },

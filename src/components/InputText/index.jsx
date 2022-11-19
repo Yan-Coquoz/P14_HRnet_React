@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { InputText } from "@yan_coquoz/react_input";
-import { onlyTextRegex, adressRegex } from "../../utils/constante";
+import { onlyTextRegex, addressRegex } from "../../utils/regex";
 import { enableButton, disableButton, addStar } from "../../utils/functions";
 import { renderInputTextError } from "../../utils/errors";
 
@@ -13,10 +13,10 @@ const Input = ({ idName, label, isRequired, myClass }) => {
   function handleValue(name, value) {
     // adresse
     if (name === "street") {
-      if (value.length <= 0 || adressRegex.test(value.toString())) {
+      if (value.length <= 0 || addressRegex.test(value.toString())) {
         setOption("");
         enableButton();
-      } else if (!adressRegex.test(value.toString())) {
+      } else if (!addressRegex.test(value.toString())) {
         setOption("address");
         disableButton();
       }

@@ -1,8 +1,8 @@
 import InputError from "../components/InputError/inputError";
 
-export function renderInputTextError(label, type = null) {
-  const input = document.querySelector(`#${label.split(" ").join("_")}`);
-  if (type === "onlyText") {
+export function renderInputTextError(_label, _type = null) {
+  const input = document.querySelector(`#${_label.split(" ").join("_")}`);
+  if (_type === "onlyText") {
     input.classList.add("error_type");
     return (
       <InputError>
@@ -15,7 +15,7 @@ export function renderInputTextError(label, type = null) {
         </ul>
       </InputError>
     );
-  } else if (type === "address") {
+  } else if (_type === "address") {
     input.classList.add("error_type");
     return (
       <InputError>
@@ -36,14 +36,15 @@ export function renderInputTextError(label, type = null) {
  * ordonnée, sinon renvoie un composant InputError vide.
  * @returns Une fonction qui renvoie un élément JSX.
  */
-export function renderInputNumberError(label, type) {
+export function renderInputNumberError(_label, _type) {
   // console.log(label, type);
-  if (type === "zipCode") {
+  if (_type === "zipCode") {
     return (
       <InputError>
-        <strong>{`${label} is not correct :`}</strong>
+        <strong>{`${_label} is not correct :`}</strong>
         <ul>
           <li>must contain 5 numbers ex : 56450</li>
+          <li>only numbers</li>
         </ul>
       </InputError>
     );

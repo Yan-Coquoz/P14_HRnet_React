@@ -1,4 +1,4 @@
-import { zipCodePattern } from "./constante";
+import { zipCodeRegex, capitalizeRegex, camelCaseRegex } from "./regex";
 
 /**
  * Il prend une chaîne, la convertit en minuscules, puis met en majuscule la première lettre de chaque
@@ -7,9 +7,8 @@ import { zipCodePattern } from "./constante";
  * @returns La fonction prend une chaîne et renvoie la même chaîne avec la première lettre de chaque
  * mot en majuscule.
  */
-export const fromLowerToUpperCase = (string) => {
-  const capitalizeRegex = /(?:^|\s+)\w/g;
-  return string
+export const fromLowerToUpperCase = (_string) => {
+  return _string
     .toLowerCase()
     .replace(capitalizeRegex, (str) => str.toUpperCase());
 };
@@ -21,9 +20,8 @@ export const fromLowerToUpperCase = (string) => {
  * @returns Une fonction qui prend une chaîne et renvoie une chaîne avec la première lettre de chaque
  * mot en majuscule.
  */
-export const toCamelCase = (string) => {
-  const camelCaseRegex = /[-_\s]+(.)?/g;
-  return string.replace(camelCaseRegex, (str, char) => {
+export const toCamelCase = (_string) => {
+  return _string.replace(camelCaseRegex, (str, char) => {
     return char ? char.toUpperCase() : "";
   });
 };
@@ -84,20 +82,24 @@ export function disableButton() {
  * @returns le libellé et le * si le paramètre requis est vrai.
  */
 export function addStar(label, required) {
+  const star = `${label} *`;
   if (required) {
-    return label + " *";
+    return star;
   } else {
     return label;
   }
 }
 
+/**
+ * Si la valeur du champ de saisie du code postal correspond à l'expression régulière du code postal,
+ * activez le bouton, sinon désactivez-le.
+ * @returns Une valeur booléenne.
+ */
 export function checkZipCode(value) {
-  console.log(zipCodePattern.test(value));
-  if (zipCodePattern.test(value)) {
+  if (zipCodeRegex.test(value)) {
     enableButton();
     return true;
-  } else {
-    disableButton();
-    return false;
   }
+  disableButton();
+  return false;
 }
