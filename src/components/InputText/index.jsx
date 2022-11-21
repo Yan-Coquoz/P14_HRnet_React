@@ -7,7 +7,7 @@ import { renderInputTextError } from "../../utils/errors";
 
 import "../../styles/main.scss";
 
-const Input = ({ idName, label, isRequired, myClass }) => {
+const Input = ({ idName, labelName, isRequired, myClass, toUpperCase }) => {
   const [option, setOption] = React.useState("");
 
   function handleValue(name, value) {
@@ -35,20 +35,20 @@ const Input = ({ idName, label, isRequired, myClass }) => {
     <>
       <InputText
         idName={idName}
-        label={addStar(label, isRequired)}
+        labelName={addStar(labelName, isRequired)}
         isRequired={isRequired}
         myClass={myClass}
-        toUpperCase={true}
+        toUpperCase={toUpperCase}
         sendValue={handleValue}
       />
-      {renderInputTextError(label, option)}
+      {renderInputTextError(labelName, option)}
     </>
   );
 };
 
 Input.propTypes = {
   idName: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  labelName: PropTypes.string.isRequired,
   isRequired: PropTypes.bool.isRequired,
   myClass: PropTypes.string.isRequired,
   onchange: PropTypes.func,

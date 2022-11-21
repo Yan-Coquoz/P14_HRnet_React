@@ -7,7 +7,7 @@ import { addStar, checkZipCode } from "../../utils/functions";
 import { renderInputNumberError } from "../../utils/errors";
 // import "./style.scss";
 
-const InputNum = ({ idName, label, isRequired, myClass }) => {
+const InputNum = ({ idName, labelName, isRequired, myClass, toUpperCase }) => {
   const dispatch = useDispatch();
   const [option, setOption] = React.useState("");
 
@@ -20,27 +20,29 @@ const InputNum = ({ idName, label, isRequired, myClass }) => {
       setOption("zipCode");
     }
   }
+
   return (
     <>
       <InputNumber
         idName={idName}
-        label={addStar(label, isRequired)}
+        labelName={addStar(labelName, isRequired)}
         sendValue={sendValue}
         isRequired={isRequired}
         myClass={myClass}
-        toUpperCase={true}
+        toUpperCase={toUpperCase}
       />
-      {renderInputNumberError(label, option)}
+      {renderInputNumberError(labelName, option)}
     </>
   );
 };
 
 InputNum.propTypes = {
   idName: PropTypes.string.isRequired,
-  label: PropTypes.string,
+  labelName: PropTypes.string,
   sendValue: PropTypes.func,
   isRequired: PropTypes.bool,
   myClass: PropTypes.string,
+  toUpperCase: PropTypes.bool,
 };
 InputNum.defaultProps = {
   sendValue: () => {},

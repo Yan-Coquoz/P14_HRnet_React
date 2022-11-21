@@ -15,14 +15,9 @@ const Select = ({
 }) => {
   const dispatch = useDispatch();
   function sendValue(key, value) {
-    // console.log(key, value);
-
-    if (isRequired) {
-      console.log("la valeur 'Option' n'est pas valable");
-    }
     dispatch(onchange({ key, value }));
   }
-  console.log("name", name, " ", "idName", idName);
+
   return (
     <>
       <SelectField

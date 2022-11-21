@@ -10,7 +10,17 @@ import Select from "../../components/Select";
 import InputNum from "../../components/InputNumber";
 
 import { submitForm } from "../../features/HomeSlice";
-import { states, depts } from "../../utils/datas";
+import {
+  selectState,
+  selectDepartment,
+  inputFirstName,
+  inputLastName,
+  inputStreet,
+  inputCity,
+  inputZipCode,
+  inputBirthDate,
+  inputStartDate,
+} from "../../utils/compoProps";
 import { formValue } from "../../utils/functions";
 import "../../styles/main.scss";
 
@@ -20,6 +30,9 @@ const Home = () => {
 
   function handleSubmitForm(evt) {
     evt.preventDefault();
+
+    /* TODO Check les valeurs required */
+
     setIsOpen(true);
     // test récup data avec FormData
     const form = evt.target;
@@ -33,29 +46,15 @@ const Home = () => {
     const formValues = formValue(evt);
     console.log(formValues);
     dispatch(submitForm(formValues));
-    form.reset();
+    // TODO Vider TOUS les champs
+    form.reset(); //! ne vide pas les dates voir du coté du package creer
   }
-  const selectState = {
-    idName: "states",
-    labelName: "state",
-    isRequired: false,
-    optValue: true,
-    tabs: states,
-    toUpperCase: true,
-  };
-  const selectDepartment = {
-    idName: "states",
-    labelName: "state",
-    isRequired: true,
-    optValue: false,
-    toUpperCase: false,
-    tabs: depts,
-  };
+
   // TODO Gestion des entrées (validation)
   /**
    * InputText ✔
    * InputNum ✔
-   * Selector
+   * Selector ✔
    * Dater
    */
   return (
@@ -75,34 +74,12 @@ const Home = () => {
           <div className="home_container__box_form__form__container">
             <div className="home_container__box_form__form__container__box_one">
               <div className="home_container__box_form__form__container__box_one__input_bloc">
-                <Input
-                  idName={"first_name"}
-                  label={"first name"}
-                  isRequired={true}
-                  myClass={"input_text"}
-                />
-
-                <Input
-                  idName={"last_name"}
-                  label={"last name"}
-                  isRequired={false}
-                  myClass={"input_text"}
-                />
+                <Input {...inputFirstName} />
+                <Input {...inputLastName} />
               </div>
               <div className="home_container__box_form__form__container__box_one__input_bloc">
-                <Dater
-                  idName="birthDate"
-                  label="birth date"
-                  toUpperCase={true}
-                  placeh="birth date"
-                  isRequired={true}
-                />
-                <Dater
-                  idName="start_date"
-                  label="start date"
-                  toUpperCase={true}
-                  placeh="start date"
-                />
+                <Dater {...inputBirthDate} />
+                <Dater {...inputStartDate} />
               </div>
             </div>
             <div className="home_container__box_form__form__container__box_two">
@@ -110,27 +87,12 @@ const Home = () => {
                 <fieldset>
                   <legend> Address </legend>
                   <div>
-                    <Input
-                      idName={"street"}
-                      label={"street"}
-                      isRequired={false}
-                      myClass={"input_text"}
-                    />
-                    <Input
-                      idName={"city"}
-                      label={"city"}
-                      isRequired={false}
-                      myClass={"input_text"}
-                    />
+                    <Input {...inputStreet} />
+                    <Input {...inputCity} />
                   </div>
                   <div>
                     <Select {...selectState} />
-                    <InputNum
-                      idName={"zip_code"}
-                      label={"zip code"}
-                      isRequired={true}
-                      myClass={"input_text"}
-                    />
+                    <InputNum {...inputZipCode} />
                   </div>
                 </fieldset>
               </div>

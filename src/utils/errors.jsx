@@ -6,7 +6,7 @@ export function renderInputTextError(_label, _type = null) {
     input.classList.add("error_type");
     return (
       <InputError>
-        <strong className="strong_error">{`${label} is not correct :`}</strong>
+        <strong className="strong_error">{`${_label} is not correct :`}</strong>
         <ul>
           <li>not long enough</li>
           <li>must not contain numbers</li>
@@ -19,7 +19,7 @@ export function renderInputTextError(_label, _type = null) {
     input.classList.add("error_type");
     return (
       <InputError>
-        <strong>{`${label} is not correct :`}</strong>
+        <strong>{`${_label} is not correct :`}</strong>
         <ul>
           <li>must not contain special characters</li>
         </ul>
