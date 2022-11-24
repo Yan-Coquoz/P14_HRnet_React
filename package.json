@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf build dist docs",
-    "clean:all": "rm -fr node_modules build dist docs package-lock.json",
+    "clean:all": "rm -fr node_modules build dist coverage docs package-lock.json",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint  src/**/*.{js,jsx,ts,tsx,json} --fix",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "@reduxjs/toolkit": "^1.8.6",
-    "@yan_coquoz/react_input": "^0.1.36",
+    "@yan_coquoz/react_input": "^0.1.45",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

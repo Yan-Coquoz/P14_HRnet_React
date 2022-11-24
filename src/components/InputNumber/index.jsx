@@ -7,7 +7,15 @@ import { addStar, checkZipCode } from "../../utils/functions";
 import { renderInputNumberError } from "../../utils/errors";
 // import "./style.scss";
 
-const InputNum = ({ idName, labelName, isRequired, myClass, toUpperCase }) => {
+const InputNum = ({
+  idName,
+  labelName,
+  isRequired,
+  myClass,
+  toUpperCase,
+  mini,
+  maxi,
+}) => {
   const dispatch = useDispatch();
   const [option, setOption] = React.useState("");
 
@@ -30,6 +38,8 @@ const InputNum = ({ idName, labelName, isRequired, myClass, toUpperCase }) => {
         isRequired={isRequired}
         myClass={myClass}
         toUpperCase={toUpperCase}
+        mini={mini}
+        maxi={maxi}
       />
       {renderInputNumberError(labelName, option)}
     </>
@@ -43,6 +53,8 @@ InputNum.propTypes = {
   isRequired: PropTypes.bool,
   myClass: PropTypes.string,
   toUpperCase: PropTypes.bool,
+  mini: PropTypes.number,
+  maxi: PropTypes.number,
 };
 InputNum.defaultProps = {
   sendValue: () => {},

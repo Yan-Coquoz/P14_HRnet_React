@@ -20,7 +20,7 @@ import {
   inputZipCode,
   inputBirthDate,
   inputStartDate,
-} from "../../utils/compoProps";
+} from "../../utils/homeCompoProps";
 import { formValue } from "../../utils/functions";
 import "../../styles/main.scss";
 
@@ -31,12 +31,11 @@ const Home = () => {
   function handleSubmitForm(evt) {
     evt.preventDefault();
 
-    /* TODO Check les valeurs required */
-
     setIsOpen(true);
     // test récup data avec FormData
     const form = evt.target;
     const formDatas = new FormData(form);
+    console.log(formDatas);
     const firstName = formDatas.get("first_name"); // propriété name de l'input
     const state = formDatas.get("states");
     const department = formDatas.get("department");
@@ -46,17 +45,10 @@ const Home = () => {
     const formValues = formValue(evt);
     console.log(formValues);
     dispatch(submitForm(formValues));
-    // TODO Vider TOUS les champs
-    form.reset(); //! ne vide pas les dates voir du coté du package creer
+
+    form.reset();
   }
 
-  // TODO Gestion des entrées (validation)
-  /**
-   * InputText ✔
-   * InputNum ✔
-   * Selector ✔
-   * Dater
-   */
   return (
     <div className="home_container">
       <div className="home_container__box_header">

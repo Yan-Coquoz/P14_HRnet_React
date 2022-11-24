@@ -9,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { fromLowerToUpperCase } from "../../utils/functions";
-import "./style.scss";
+import "../../styles/main.scss";
 
 const columns = [
   { id: "firstName", label: "first name", align: "center", minWidth: 100 },

@@ -45,7 +45,8 @@
           &:hover {
             box-shadow: 7px 8px 18px -4px rgba(255, 255, 255, 0.75);
             transition: 0.3s;
-            animation: card-shadow 0.3s normal;
+            animation: card-shadow 0.2s normal;
+            border-bottom-right-radius: 20px;
           }
         }
         &__box_two__input_bloc {

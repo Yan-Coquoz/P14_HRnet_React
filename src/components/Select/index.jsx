@@ -12,6 +12,7 @@ const Select = ({
   tabs,
   optValue,
   toUpperCase,
+  group,
 }) => {
   const dispatch = useDispatch();
   function sendValue(key, value) {
@@ -26,8 +27,9 @@ const Select = ({
         labelName={addStar(labelName, isRequired)}
         isRequired={isRequired}
         optValue={optValue}
-        toUpperCase={toUpperCase}
         sendValue={sendValue}
+        toUpperCase={toUpperCase}
+        group={group}
       />
     </>
   );
@@ -41,11 +43,13 @@ Select.propTypes = {
   optValue: PropTypes.bool,
   sendValue: PropTypes.func,
   toUpperCase: PropTypes.bool,
+  group: PropTypes.bool,
 };
 Select.defaultProps = {
   sendValue: () => {},
   optValue: false,
   toUpperCase: false,
   isRequired: false,
+  group: false,
 };
 export default Select;

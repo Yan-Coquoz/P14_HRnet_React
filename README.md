@@ -43,14 +43,14 @@ yarn
 
 ### Besoins
 
-- [ ] Convertir l'ensemble du projet HRNet en React.
-- [ ] Convertir l'un des quatre plugins jQuery actuels en React. Remplacer les 3 plugins jQuery restants par des composants React que tu coderas toi-même, ou que tu peux importer depuis des libraires existantes si tu manques de temps.
+- [✔️] Convertir l'ensemble du projet HRNet en React.
+- [ ] Convertir **l'un** des quatre plugins jQuery actuels en React. Remplacer les 3 plugins jQuery restants par des composants React que tu coderas toi-même, ou que tu peux importer depuis des libraires existantes si tu manques de temps.
 - [ ] Effectuer des tests de performance Lighthouse en comparant l'ancienne et la nouvelle application.
 
-- Tu devras faire une nouvelle version des pages "Create Employee" et "Employee List" avec React.
-- Tu devras ajouter un système de gestion d'état (la version actuelle utilise un stockage local).
-- Tu dois aussi t'assurer que tout est cohérent au niveau du style. Pour cela, tu n'es pas obligé de refaire le design de l'application, mais si tu veux changer le style pour quelque chose de plus moderne, tu es le bienvenu.  
-- Si tu as le temps, tu peux tester le code React avec une suite de tests unitaires. Sinon, seuls des tests manuels sont nécessaires.
+- Tu devras faire une nouvelle version des pages "Create Employee" et "Employee List" avec React. ✔️
+- Tu devras ajouter un système de gestion d'état (la version actuelle utilise un stockage local). ✔️
+- Tu dois aussi t'assurer que tout est cohérent au niveau du style. Pour cela, tu n'es pas obligé de refaire le design de l'application, mais si tu veux changer le style pour quelque chose de plus moderne, tu es le bienvenu. ✔️
+- Si tu as le temps, tu peux tester le code React avec une suite de tests unitaires. Sinon, seuls des tests manuels sont nécessaires. ✔️
 
 ### issues
 

@@ -1,12 +1,13 @@
-import { states, depts } from "./datas";
+import { states, depts } from "./SelectDatas";
 
 export const selectState = {
   idName: "states",
   labelName: "state",
   isRequired: false,
   optValue: false,
-  tabs: states,
   toUpperCase: true,
+  tabs: states,
+  group: false,
 };
 
 export const selectDepartment = {
@@ -16,6 +17,7 @@ export const selectDepartment = {
   optValue: true,
   toUpperCase: true,
   tabs: depts,
+  group: false,
 };
 
 export const inputFirstName = {
@@ -29,7 +31,7 @@ export const inputFirstName = {
 export const inputLastName = {
   idName: "last_name",
   labelName: "last name",
-  isRequired: true,
+  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
 };
@@ -37,7 +39,7 @@ export const inputLastName = {
 export const inputStreet = {
   idName: "street",
   labelName: "street",
-  isRequired: true,
+  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
 };
@@ -45,7 +47,7 @@ export const inputStreet = {
 export const inputCity = {
   idName: "city",
   labelName: "city",
-  isRequired: true,
+  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
 };
@@ -56,6 +58,8 @@ export const inputZipCode = {
   isRequired: true,
   myClass: "input_number",
   toUpperCase: true,
+  mini: 10000,
+  maxi: 99999,
 };
 
 export const inputBirthDate = {

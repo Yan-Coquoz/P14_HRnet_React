@@ -12,9 +12,6 @@ const Dater = ({
   isRequired,
   lang,
 }) => {
-  const input = document.querySelector(`input#${idName}`);
-
-  console.log(input);
   return (
     <div>
       <DatePicker
