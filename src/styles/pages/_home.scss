@@ -11,7 +11,6 @@
     width: 90%;
     display: flex;
     justify-content: space-between;
-    margin: 2rem auto;
   }
 
   &__box_form {
@@ -41,7 +40,7 @@
           padding: 0.5rem;
           width: 274px;
           border-radius: 5px;
-
+          background: rgba(194, 193, 193, 0.26);
           &:hover {
             box-shadow: 7px 8px 18px -4px rgba(255, 255, 255, 0.75);
             transition: 0.3s;

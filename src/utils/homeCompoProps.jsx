@@ -3,63 +3,63 @@ import { states, depts } from "./SelectDatas";
 export const selectState = {
   idName: "states",
   labelName: "state",
-  isRequired: false,
-  optValue: false,
   toUpperCase: true,
   tabs: states,
   group: false,
+  optValue: true,
+  isRequired: false,
 };
 
 export const selectDepartment = {
   idName: "department",
   labelName: "department",
-  isRequired: true,
-  optValue: true,
   toUpperCase: true,
   tabs: depts,
   group: false,
+  optValue: false,
+  isRequired: true,
 };
 
 export const inputFirstName = {
-  idName: "first_name",
+  idName: "firstName",
   labelName: "first name",
-  isRequired: true,
   myClass: "input_text",
   toUpperCase: true,
+  isRequired: true,
 };
 
 export const inputLastName = {
-  idName: "last_name",
+  idName: "lastName",
   labelName: "last name",
-  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
+  isRequired: false,
 };
 
 export const inputStreet = {
   idName: "street",
   labelName: "street",
-  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
+  isRequired: false,
 };
 
 export const inputCity = {
   idName: "city",
   labelName: "city",
-  isRequired: false,
   myClass: "input_text",
   toUpperCase: true,
+  isRequired: false,
 };
 
 export const inputZipCode = {
-  idName: "zip_code",
+  idName: "zipCode",
   labelName: "zip code",
-  isRequired: true,
   myClass: "input_number",
   toUpperCase: true,
   mini: 10000,
   maxi: 99999,
+  isRequired: false,
 };
 
 export const inputBirthDate = {
@@ -68,11 +68,11 @@ export const inputBirthDate = {
   toUpperCase: true,
   placeh: "click here",
   lang: "en",
-  isRequired: true,
+  isRequired: false,
 };
 
 export const inputStartDate = {
-  idName: "start_date",
+  idName: "startDate",
   labelName: "start date",
   toUpperCase: true,
   placeh: "click here",

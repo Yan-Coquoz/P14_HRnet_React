@@ -1,8 +1,15 @@
+@use "../utils/vars" as v;
+
 .input_error_container {
   color: red;
   letter-spacing: 1.2px;
   margin-top: 0.5rem;
   max-height: fit-content;
+  background: rgba(255, 255, 255, 0.237);
+  border-radius: 5px;
+  & strong {
+    padding: 0.5rem;
+  }
 }
 
 // input Text
@@ -11,4 +18,11 @@ input.error_type {
     border: 3px solid red !important;
     outline: red !important;
   }
+}
+
+// select / input
+input:required:invalid:focus-visible,
+select:required:invalid:focus-visible {
+  border: 3px solid red !important;
+  outline: none;
 }

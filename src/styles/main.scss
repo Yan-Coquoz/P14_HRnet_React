@@ -12,12 +12,16 @@
 @import "./components/header.scss";
 @import "./components/containers.scss";
 @import "./components/table.scss";
+@import "./components/modal";
+@import "./components/inputError";
 
 // pages
 @import "./pages/employee.scss";
 @import "./pages/error.scss";
 @import "./pages/home.scss";
 
+// theme
+@import "./themes/head.scss";
+
 // media queries
 @import "./layout/media.scss";
-

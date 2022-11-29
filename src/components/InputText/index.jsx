@@ -1,9 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { InputText } from "@yan_coquoz/react_input";
-import { onlyTextRegex, addressRegex } from "../../utils/regex";
-import { enableButton, disableButton, addStar } from "../../utils/functions";
-import { renderInputTextError } from "../../utils/errors";
+
+import {
+  enableButton,
+  disableButton,
+  addStar,
+  renderInputTextError,
+  onlyTextRegex,
+  addressRegex,
+} from "../../utils";
 
 import "../../styles/main.scss";
 
@@ -41,7 +47,7 @@ const Input = ({ idName, labelName, isRequired, myClass, toUpperCase }) => {
         toUpperCase={toUpperCase}
         sendValue={handleValue}
       />
-      {renderInputTextError(labelName, option)}
+      {/* {renderInputTextError(labelName, option)} */}
     </>
   );
 };

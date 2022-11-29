@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
-
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import StickyHeadTable from "../../components/Table";
 import Header from "../../components/Header";
-import { useSelector } from "react-redux";
+
 import { sendEmployees } from "../../features/HomeSlice";
+
 import "../../styles/main.scss";
 
 const Employee = () => {

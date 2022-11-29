@@ -19,13 +19,15 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "@reduxjs/toolkit": "^1.8.6",
-    "@yan_coquoz/react_input": "^0.1.45",
+    "@yan_coquoz/react_input": "^0.1.48",
+    "formik": "^2.2.9",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.3",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",

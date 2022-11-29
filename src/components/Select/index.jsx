@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { SelectField } from "@yan_coquoz/react_input";
-import { onchange } from "../../features/SelectSlice";
 import { useDispatch } from "react-redux";
-import { addStar } from "../../utils/functions";
+import { SelectField } from "@yan_coquoz/react_input";
+
+import { onchange } from "../../features/SelectSlice";
+import { addStar } from "../../utils";
 
 const Select = ({
   idName,
@@ -15,7 +16,9 @@ const Select = ({
   group,
 }) => {
   const dispatch = useDispatch();
+
   function sendValue(key, value) {
+    // console.log(key, value);
     dispatch(onchange({ key, value }));
   }
 
@@ -36,20 +39,21 @@ const Select = ({
 };
 
 Select.propTypes = {
+  group: PropTypes.bool,
   idName: PropTypes.string.isRequired,
+  isRequired: PropTypes.bool,
   labelName: PropTypes.string.isRequired,
-  tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
-  isRequired: PropTypes.bool.isRequired,
   optValue: PropTypes.bool,
   sendValue: PropTypes.func,
+  tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
   toUpperCase: PropTypes.bool,
-  group: PropTypes.bool,
 };
+
 Select.defaultProps = {
-  sendValue: () => {},
-  optValue: false,
-  toUpperCase: false,
-  isRequired: false,
   group: false,
+  isRequired: false,
+  optValue: false,
+  sendValue: () => {},
+  toUpperCase: false,
 };
 export default Select;

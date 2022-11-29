@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
+
 import logo from "../../assets/logo_view.png";
-import "../../styles/components/_header.scss";
+
+import "../../styles/main.scss";
 
 const Header = ({ children }) => {
   return (

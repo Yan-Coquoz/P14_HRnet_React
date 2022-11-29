@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../../styles/main.scss";
 
 const Error = () => {
-  // écrire le code ici
   return (
     <div className="error_container">
       <h1 className="error_container__title">Error 404</h1>

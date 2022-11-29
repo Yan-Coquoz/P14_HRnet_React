@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { InputNumber } from "@yan_coquoz/react_input";
-import { onchange } from "../../features/InputNumSlice";
 import { useDispatch } from "react-redux";
-import { addStar, checkZipCode } from "../../utils/functions";
-import { renderInputNumberError } from "../../utils/errors";
-// import "./style.scss";
+
+import { onchange } from "../../features/InputNumSlice";
+import { addStar, checkZipCode, renderInputNumberError } from "../../utils";
 
 const InputNum = ({
   idName,

@@ -1,16 +1,18 @@
 @use "../utils/vars" as v;
 
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
 #root {
   width: 100%;
 }
 
 body {
-  font-family: "Fira Code", "Times New Roman", Times, serif;
+  font-family: "Rajdhani", "Fira Code", "Times New Roman", Times, serif;
   background-color: #eeeeee9a;
-  background: no-repeat url(../assets/focus.jpg);
+  background: no-repeat url("../assets/Circuit Primary.svg");
   background-size: cover;
   height: 1250px;
   width: 100%;
+  font-weight: bold;
 }
 h1 {
   font-size: calc(1.375rem + 1.5vw);

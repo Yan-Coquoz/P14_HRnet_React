@@ -8,7 +8,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { fromLowerToUpperCase } from "../../utils/functions";
+
+import { fromLowerToUpperCase } from "../../utils";
+
 import "../../styles/main.scss";
 
 const columns = [

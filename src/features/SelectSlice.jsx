@@ -13,6 +13,7 @@ export const SelectSlice = createSlice({
   reducers: {
     onchange: (draft, action) => {
       const { key, value } = action.payload;
+
       // console.log(action.type);
       // console.log(action.payload);
       // console.log(key, value);

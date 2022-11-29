@@ -1,8 +1,8 @@
+import { Routes, Route } from "react-router-dom";
+
 import Home from "../../pages/Home";
 import Employee from "../../pages/Employee";
 import Error from "../../pages/Error";
-import { Routes, Route } from "react-router-dom";
-import "./App.scss";
 
 function App() {
   return (

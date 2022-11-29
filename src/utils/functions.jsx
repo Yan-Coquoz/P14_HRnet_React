@@ -75,19 +75,15 @@ export function disableButton() {
 }
 
 /**
- * Si le paramètre requis est vrai, ajoutez une étoile à la fin du paramètre d'étiquette. Sinon,
- * renvoyez simplement le paramètre label
+ * Si le paramètre requis est vrai, ajoutez une étoile à la fin du paramètre d'étiquette. Sinon, renvoyez simplement le paramètre label
+ *
  * @param {String} label - L'étiquette du champ
  * @param {Boolean} required - vrai faux
- * @returns le libellé et le * si le paramètre requis est vrai.
+ * @returns le libellé et l'* si le paramètre requis est vrai.
  */
 export function addStar(label, required) {
   const star = `${label} *`;
-  if (required) {
-    return star;
-  } else {
-    return label;
-  }
+  return required ? star : label;
 }
 
 /**

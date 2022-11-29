@@ -33,7 +33,7 @@ export const HomeSlice = createSlice({
   initialState,
   reducers: {
     submitForm: (draft, action) => {
-      console.log(action.payload);
+      // console.log("submit form ", action.payload);
       draft.employee.push(action.payload);
     },
   },

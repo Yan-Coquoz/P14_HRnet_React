@@ -1,3 +1,5 @@
+@use "../utils/vars" as v;
+
 .error_container {
   width: 80%;
   margin: 0 auto;
@@ -8,7 +10,8 @@
     &__para {
       font-weight: bold;
       text-align: center;
-      font-size: larger;
+      font-size: 10rem;
+      color: v.$colorLight;
     }
   }
   &__link {
