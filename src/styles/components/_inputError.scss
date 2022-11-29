@@ -26,3 +26,12 @@ select:required:invalid:focus-visible {
   border: 3px solid red !important;
   outline: none;
 }
+
+.error {
+  color: red;
+  margin: 0.7rem auto;
+  padding: 0.5rem;
+  &::first-line {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}

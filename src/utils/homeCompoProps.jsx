@@ -49,7 +49,7 @@ export const inputCity = {
   labelName: "city",
   myClass: "input_text",
   toUpperCase: true,
-  isRequired: false,
+  isRequired: true,
 };
 
 export const inputZipCode = {

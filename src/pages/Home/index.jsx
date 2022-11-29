@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import { Button, Modale } from "@yan_coquoz/react_input";
 
 import Header from "../../components/Header";
-import Input from "../../components/InputText";
+import TextInput from "../../components/InputText";
 import Dater from "../../components/DatePick";
 import Select from "../../components/Select";
 import InputNum from "../../components/InputNumber";
@@ -26,6 +26,7 @@ import {
   inputStartDate,
   formValue,
   onlyTextRegex,
+  addressRegex,
 } from "../../utils";
 
 import "../../styles/main.scss";
@@ -33,9 +34,38 @@ import "../../styles/main.scss";
 // Validation Yup
 const validationFormSchema = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, "too short !!")
+    .min(2, "too short !")
     .max(30, "too long !!")
+    .matches(
+      onlyTextRegex,
+      `- No Digits
+    - No special characters`
+    )
     .required("Is Required"),
+
+  lastName: Yup.string()
+    .min(2, "too short !")
+    .max(30, "too long !!")
+    .matches(
+      onlyTextRegex,
+      `- No Digits
+    - No special characters`
+    ),
+
+  street: Yup.string()
+    .min(2, "too short !")
+    .max(30, "too long !!")
+    .matches(addressRegex, "No special characters"),
+
+  city: Yup.string()
+    .min(2, "too short !")
+    .max(30, "too long !!")
+    .matches(
+      onlyTextRegex,
+      `- No Digits
+    - No special characters`
+    )
+    .required("Required"),
 });
 
 const Home = () => {
@@ -51,14 +81,6 @@ const Home = () => {
   //   setIsOpen(true);
   //   form.reset();
   // }
-
-  const validateValue = (value) => {
-    let validateMSG;
-    if (!onlyTextRegex.test(value)) {
-      validateMSG = "Incorrect";
-    }
-    return validateMSG;
-  };
 
   return (
     <div className="home_container">
@@ -83,29 +105,38 @@ const Home = () => {
             department: "",
           }}
           validationSchema={validationFormSchema}
-          onSubmit={(value) => {
-            console.log(value);
+          onSubmit={(value, { resetForm }) => {
+            dispatch(submitForm(value));
+
+            setIsOpen(true);
+            resetForm();
           }}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, isSubmitting }) => (
             <Form className="home_container__box_form__form">
               <div className="home_container__box_form__form__container">
                 <div className="home_container__box_form__form__container__box_one">
                   <div className="home_container__box_form__form__container__box_one__input_bloc">
                     <Field
-                      validate={validateValue}
-                      as={Input}
+                      as={TextInput}
                       name={inputFirstName.idName}
                       idName={inputFirstName.idName}
                       labelName={inputFirstName.labelName}
-                      myClass={inputFirstName.myClass}
                       toUpperCase={inputFirstName.toUpperCase}
                       isRequired={inputFirstName.isRequired}
                     />
                     {errors.firstName && touched.firstName}
                     <div className="error">{errors.firstName}</div>
-
-                    <Input {...inputLastName} />
+                    <Field
+                      as={TextInput}
+                      name={inputLastName.idName}
+                      idName={inputLastName.idName}
+                      labelName={inputLastName.labelName}
+                      toUpperCase={inputLastName.toUpperCase}
+                      isRequired={inputLastName.isRequired}
+                    />
+                    {errors.lastName && touched.lastName}
+                    <div className="error">{errors.lastName}</div>
                   </div>
                   <div className="home_container__box_form__form__container__box_one__input_bloc">
                     <Dater {...inputBirthDate} />
@@ -117,8 +148,27 @@ const Home = () => {
                     <fieldset>
                       <legend> Address </legend>
                       <div>
-                        <Input {...inputStreet} />
-                        <Input {...inputCity} />
+                        <Field
+                          as={TextInput}
+                          name={inputStreet.idName}
+                          idName={inputStreet.idName}
+                          labelName={inputStreet.labelName}
+                          toUpperCase={inputStreet.toUpperCase}
+                          isRequired={inputStreet.isRequired}
+                        />
+                        {errors.street && touched.street}
+                        <div className="error">{errors.street}</div>
+
+                        <Field
+                          as={TextInput}
+                          name={inputCity.idName}
+                          idName={inputCity.idName}
+                          labelName={inputCity.labelName}
+                          toUpperCase={inputCity.toUpperCase}
+                          isRequired={inputCity.isRequired}
+                        />
+                        {errors.city && touched.city}
+                        <div className="error">{errors.city}</div>
                       </div>
                       <div>
                         <Select {...selectState} />

@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "@reduxjs/toolkit": "^1.8.6",
-    "@yan_coquoz/react_input": "^0.1.48",
+    "@yan_coquoz/react_input": "^0.1.49",
     "formik": "^2.2.9",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
