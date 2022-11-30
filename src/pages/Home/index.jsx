@@ -27,6 +27,7 @@ import {
   formValue,
   onlyTextRegex,
   addressRegex,
+  zipCodeRegex,
 } from "../../utils";
 
 import "../../styles/main.scss";
@@ -48,7 +49,7 @@ const validationFormSchema = Yup.object().shape({
     .max(30, "too long !!")
     .matches(
       onlyTextRegex,
-      `- No Digits
+      `- Not numbers
     - No special characters`
     ),
 
@@ -65,6 +66,12 @@ const validationFormSchema = Yup.object().shape({
       `- No Digits
     - No special characters`
     )
+    .required("Required"),
+  zipCode: Yup.number()
+    .positive()
+    .integer()
+    .moreThan(10000, "Must have 5 numbers ex : 56210")
+    .max(99999, "Too long !!")
     .required("Required"),
 });
 
@@ -120,20 +127,14 @@ const Home = () => {
                     <Field
                       as={TextInput}
                       name={inputFirstName.idName}
-                      idName={inputFirstName.idName}
-                      labelName={inputFirstName.labelName}
-                      toUpperCase={inputFirstName.toUpperCase}
-                      isRequired={inputFirstName.isRequired}
+                      {...inputFirstName}
                     />
                     {errors.firstName && touched.firstName}
                     <div className="error">{errors.firstName}</div>
                     <Field
                       as={TextInput}
                       name={inputLastName.idName}
-                      idName={inputLastName.idName}
-                      labelName={inputLastName.labelName}
-                      toUpperCase={inputLastName.toUpperCase}
-                      isRequired={inputLastName.isRequired}
+                      {...inputLastName}
                     />
                     {errors.lastName && touched.lastName}
                     <div className="error">{errors.lastName}</div>
@@ -151,10 +152,7 @@ const Home = () => {
                         <Field
                           as={TextInput}
                           name={inputStreet.idName}
-                          idName={inputStreet.idName}
-                          labelName={inputStreet.labelName}
-                          toUpperCase={inputStreet.toUpperCase}
-                          isRequired={inputStreet.isRequired}
+                          {...inputStreet}
                         />
                         {errors.street && touched.street}
                         <div className="error">{errors.street}</div>
@@ -162,17 +160,18 @@ const Home = () => {
                         <Field
                           as={TextInput}
                           name={inputCity.idName}
-                          idName={inputCity.idName}
-                          labelName={inputCity.labelName}
-                          toUpperCase={inputCity.toUpperCase}
-                          isRequired={inputCity.isRequired}
+                          {...inputCity}
                         />
                         {errors.city && touched.city}
                         <div className="error">{errors.city}</div>
                       </div>
                       <div>
                         <Select {...selectState} />
-                        <InputNum {...inputZipCode} />
+
+                        <Field as={InputNum} name="zipCode" {...inputZipCode} />
+                        {(errors.zipCode, touched.zipCode)}
+                        <div className="error">{errors.zipCode}</div>
+                        {/* <InputNum {...inputZipCode} /> */}
                       </div>
                     </fieldset>
                   </div>

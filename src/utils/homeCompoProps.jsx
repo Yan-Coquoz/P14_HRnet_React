@@ -59,7 +59,7 @@ export const inputZipCode = {
   toUpperCase: true,
   mini: 10000,
   maxi: 99999,
-  isRequired: false,
+  isRequired: true,
 };
 
 export const inputBirthDate = {
