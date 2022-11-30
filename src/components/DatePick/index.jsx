@@ -5,7 +5,14 @@ import { addStar, fromLowerToUpperCase } from "../../utils";
 
 import "../../styles/main.scss";
 
-const Dater = ({ idName, labelName, toUpperCase, isRequired }) => {
+const Dater = ({
+  idName,
+  labelName,
+  toUpperCase,
+  isRequired,
+  onChange,
+  value,
+}) => {
   if (toUpperCase) {
     labelName = fromLowerToUpperCase(labelName);
   }
@@ -21,8 +28,9 @@ const Dater = ({ idName, labelName, toUpperCase, isRequired }) => {
         name={idName}
         id={idName}
         required={isRequired}
+        onChange={onChange}
+        value={value}
       />
-      <span className="validity"></span>
     </div>
   );
 };
@@ -32,5 +40,7 @@ Dater.propTypes = {
   labelName: PropTypes.string,
   toUpperCase: PropTypes.bool,
   isRequired: PropTypes.bool,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 export default Dater;

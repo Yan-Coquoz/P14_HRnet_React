@@ -42,7 +42,7 @@ const validationFormSchema = Yup.object().shape({
       `- No Digits
     - No special characters`
     )
-    .required("Is Required"),
+    .required("Is required"),
 
   lastName: Yup.string()
     .min(2, "too short !")
@@ -66,13 +66,15 @@ const validationFormSchema = Yup.object().shape({
       `- No Digits
     - No special characters`
     )
-    .required("Required"),
+    .required("Is required"),
   zipCode: Yup.number()
     .positive()
     .integer()
     .moreThan(10000, "Must have 5 numbers ex : 56210")
     .max(99999, "Too long !!")
-    .required("Required"),
+    .required("Is required"),
+  birthDate: Yup.date(),
+  startDate: Yup.date().required("Is required"),
 });
 
 const Home = () => {
@@ -140,8 +142,14 @@ const Home = () => {
                     <div className="error">{errors.lastName}</div>
                   </div>
                   <div className="home_container__box_form__form__container__box_one__input_bloc">
-                    <Dater {...inputBirthDate} />
-                    <Dater {...inputStartDate} />
+                    <Field name="birthDate" as={Dater} {...inputBirthDate} />
+                    {errors.birthDate && touched.birthDate}
+                    <div className="error">{errors.birthDate}</div>
+                    {/* <Dater {...inputBirthDate} /> */}
+                    <Field name="startDate" as={Dater} {...inputStartDate} />
+                    {errors.startDate && touched.startDate}
+                    <div className="error">{errors.startDate}</div>
+                    {/* <Dater {...inputStartDate} /> */}
                   </div>
                 </div>
                 <div className="home_container__box_form__form__container__box_two">
@@ -166,7 +174,7 @@ const Home = () => {
                         <div className="error">{errors.city}</div>
                       </div>
                       <div>
-                        <Select {...selectState} />
+                        {/* <Field name="state" as={Select} {...selectState} /> */}
 
                         <Field as={InputNum} name="zipCode" {...inputZipCode} />
                         {(errors.zipCode, touched.zipCode)}
