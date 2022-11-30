@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 
-import { Button, Modale } from "@yan_coquoz/react_input";
+import { Button, Modale, SelectField } from "@yan_coquoz/react_input";
 
 import Header from "../../components/Header";
 import TextInput from "../../components/InputText";
 import Dater from "../../components/DatePick";
 import Select from "../../components/Select";
+
 import InputNum from "../../components/InputNumber";
 
 import { submitForm } from "../../features/HomeSlice";
@@ -72,9 +73,11 @@ const validationFormSchema = Yup.object().shape({
     .integer()
     .moreThan(10000, "Must have 5 numbers ex : 56210")
     .max(99999, "Too long !!")
-    .required("Is required"),
+    .required(),
   birthDate: Yup.date(),
   startDate: Yup.date().required("Is required"),
+  states: Yup.string().nullable(false).required(),
+  department: Yup.string().required().nullable(false),
 });
 
 const Home = () => {
@@ -109,7 +112,7 @@ const Home = () => {
             startDate: "",
             street: "",
             city: "",
-            state: "",
+            states: "",
             zipCode: "",
             department: "",
           }}
@@ -133,6 +136,7 @@ const Home = () => {
                     />
                     {errors.firstName && touched.firstName}
                     <div className="error">{errors.firstName}</div>
+
                     <Field
                       as={TextInput}
                       name={inputLastName.idName}
@@ -145,11 +149,10 @@ const Home = () => {
                     <Field name="birthDate" as={Dater} {...inputBirthDate} />
                     {errors.birthDate && touched.birthDate}
                     <div className="error">{errors.birthDate}</div>
-                    {/* <Dater {...inputBirthDate} /> */}
+
                     <Field name="startDate" as={Dater} {...inputStartDate} />
                     {errors.startDate && touched.startDate}
                     <div className="error">{errors.startDate}</div>
-                    {/* <Dater {...inputStartDate} /> */}
                   </div>
                 </div>
                 <div className="home_container__box_form__form__container__box_two">
@@ -174,18 +177,33 @@ const Home = () => {
                         <div className="error">{errors.city}</div>
                       </div>
                       <div>
-                        {/* <Field name="state" as={Select} {...selectState} /> */}
+                        <Field
+                          name={selectState.idName}
+                          as={Select}
+                          {...selectState}
+                        />
+                        {errors.state && touched.state}
+                        <div className="error">{errors.state}</div>
 
                         <Field as={InputNum} name="zipCode" {...inputZipCode} />
                         {(errors.zipCode, touched.zipCode)}
                         <div className="error">{errors.zipCode}</div>
-                        {/* <InputNum {...inputZipCode} /> */}
                       </div>
                     </fieldset>
                   </div>
 
                   <div className="home_container__box_form__form__container__box_two__input_bloc">
-                    <Select {...selectDepartment} />
+                    {/* <Select {...selectDepartment} /> */}
+                    <div>
+                      <Field
+                        name="department"
+                        as={Select}
+                        {...selectDepartment}
+                      />
+                      {errors.department && touched.department}
+                      <div className="error">{errors.department}</div>
+                    </div>
+
                     <div className="home_container__box_form__form__container__input_button">
                       <Button type="submit">Save</Button>
                     </div>

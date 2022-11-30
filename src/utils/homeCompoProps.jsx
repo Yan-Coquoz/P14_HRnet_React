@@ -4,17 +4,17 @@ export const selectState = {
   idName: "states",
   labelName: "state",
   toUpperCase: true,
-  tabs: states,
+  options: states,
   group: false,
   optValue: true,
-  isRequired: false,
+  isRequired: true,
 };
 
 export const selectDepartment = {
   idName: "department",
   labelName: "department",
   toUpperCase: true,
-  tabs: depts,
+  options: depts,
   group: false,
   optValue: false,
   isRequired: true,

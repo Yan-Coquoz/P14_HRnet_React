@@ -31,7 +31,9 @@ select:required:invalid:focus-visible {
   color: red;
   margin: 0.7rem auto;
   padding: 0.5rem;
+  text-align: center;
+
   &::first-line {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(8, 8, 8, 0.795);
   }
 }
