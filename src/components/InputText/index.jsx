@@ -14,14 +14,19 @@ const TextInput = ({
   value,
 }) => {
   return (
-    <>
-      <label htmlFor={idName}>
+    <div className="input_container">
+      <label htmlFor={idName} className="input_container__label">
         {toUpperCase
           ? addStar(fromLowerToUpperCase(labelName), isRequired)
           : addStar(labelName, isRequired)}
       </label>
-      <input name={idName} value={value} onChange={onChange} />
-    </>
+      <input
+        name={idName}
+        value={value}
+        onChange={onChange}
+        placeholder={labelName}
+      />
+    </div>
   );
 };
 

@@ -1,5 +1,3 @@
-import { renderInputTextError, renderInputNumberError } from "./errors";
-
 import {
   fromLowerToUpperCase,
   toCamelCase,
@@ -10,6 +8,7 @@ import {
   checkZipCode,
 } from "./functions";
 
+import { validationFormSchema } from "./yupValidation";
 import {
   selectState,
   selectDepartment,
@@ -31,8 +30,7 @@ import {
 } from "./regex";
 
 export {
-  renderInputTextError,
-  renderInputNumberError,
+  validationFormSchema,
   fromLowerToUpperCase,
   toCamelCase,
   formValue,

@@ -27,6 +27,7 @@ const InputNum = ({
         mini={mini}
         maxi={maxi}
         value={value}
+        placeholder={labelName}
       />
     </>
   );

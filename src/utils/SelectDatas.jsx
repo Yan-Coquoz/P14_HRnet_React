@@ -1,9 +1,9 @@
-export const depts = [
-  { name: "sales" },
-  { name: "marketing" },
-  { name: "engineering" },
-  { name: "human ressources" },
-  { name: "legal" },
+export const departments = [
+  "sales",
+  "marketing",
+  "engineering",
+  "human ressources",
+  "legal",
 ];
 
 export const states = [

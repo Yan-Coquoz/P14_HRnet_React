@@ -3,15 +3,13 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Formik, Field, Form } from "formik";
-import * as Yup from "yup";
 
-import { Button, Modale, SelectField } from "@yan_coquoz/react_input";
+import { Button, Modale } from "@yan_coquoz/react_input";
 
 import Header from "../../components/Header";
 import TextInput from "../../components/InputText";
 import Dater from "../../components/DatePick";
 import Select from "../../components/Select";
-
 import InputNum from "../../components/InputNumber";
 
 import { submitForm } from "../../features/HomeSlice";
@@ -25,74 +23,14 @@ import {
   inputZipCode,
   inputBirthDate,
   inputStartDate,
-  formValue,
-  onlyTextRegex,
-  addressRegex,
-  zipCodeRegex,
+  validationFormSchema,
 } from "../../utils";
 
 import "../../styles/main.scss";
 
-// Validation Yup
-const validationFormSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, "too short !")
-    .max(30, "too long !!")
-    .matches(
-      onlyTextRegex,
-      `- No Digits
-    - No special characters`
-    )
-    .required("Is required"),
-
-  lastName: Yup.string()
-    .min(2, "too short !")
-    .max(30, "too long !!")
-    .matches(
-      onlyTextRegex,
-      `- Not numbers
-    - No special characters`
-    ),
-
-  street: Yup.string()
-    .min(2, "too short !")
-    .max(30, "too long !!")
-    .matches(addressRegex, "No special characters"),
-
-  city: Yup.string()
-    .min(2, "too short !")
-    .max(30, "too long !!")
-    .matches(
-      onlyTextRegex,
-      `- No Digits
-    - No special characters`
-    )
-    .required("Is required"),
-  zipCode: Yup.number()
-    .positive()
-    .integer()
-    .moreThan(10000, "Must have 5 numbers ex : 56210")
-    .max(99999, "Too long !!")
-    .required(),
-  birthDate: Yup.date(),
-  startDate: Yup.date().required("Is required"),
-  states: Yup.string().nullable(false).required(),
-  department: Yup.string().required().nullable(false),
-});
-
 const Home = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const dispatch = useDispatch();
-
-  // function handleSubmitForm(evt) {
-  //   evt.preventDefault();
-
-  //   const form = evt.target;
-  //   const formValues = formValue(evt);
-  //   dispatch(submitForm(formValues));
-  //   setIsOpen(true);
-  //   form.reset();
-  // }
 
   return (
     <div className="home_container">
@@ -193,7 +131,6 @@ const Home = () => {
                   </div>
 
                   <div className="home_container__box_form__form__container__box_two__input_bloc">
-                    {/* <Select {...selectDepartment} /> */}
                     <div>
                       <Field
                         name="department"
@@ -217,7 +154,7 @@ const Home = () => {
       <Modale
         message="Create Employee"
         open={isOpen}
-        // sendStyle={`#${Math.floor(Math.random() * 0xffffff).toString(16)}`}
+        sendStyle="#93ad15"
         onClose={() => setIsOpen(!isOpen)}
       />
     </div>
