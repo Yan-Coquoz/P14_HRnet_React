@@ -4,10 +4,13 @@
     "name": "Yan Coquoz",
     "email": "yan.coquoz@gmail.com"
   },
+  "homepage": "https:Yan-Coquoz.github.io/p14-hrnet-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -41,6 +44,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.8.0",
     "sass": "^1.55.0",
     "vite": "^3.2.0"
