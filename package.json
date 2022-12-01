@@ -5,12 +5,12 @@
     "email": "yan.coquoz@gmail.com"
   },
   "homepage": "https:Yan-Coquoz.github.io/P14_HRnet_React",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
