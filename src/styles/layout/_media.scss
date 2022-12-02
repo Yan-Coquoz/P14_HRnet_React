@@ -1,14 +1,13 @@
 @use "../utils/vars" as v;
 @media screen and (max-width: 1045px) {
   body {
-    height: 1100px;
+    // height: 1100px;
   }
   .home_container {
     &__box_header {
       justify-content: space-around;
     }
     &__box_form__form__container {
-      justify-content: center;
       &__box_one,
       &__box_two {
         flex-direction: column;
@@ -44,19 +43,38 @@
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    height: 1020px;
-  }
   .home_container {
     &__box_header {
-      display: block;
+      display: flex;
     }
     &__box_form__form__container {
       justify-content: center;
       gap: 1rem;
+      &__box_two__input_bloc:nth-child(2) {
+        flex-direction: row;
+        align-items: center;
+        margin: auto 0;
+        height: 100px;
+        position: relative;
+        bottom: -23px;
+        left: -135px;
+        width: 100%;
+        & div {
+          margin-right: 1rem;
+          margin-top: 0.5rem;
+          & .select_container {
+            text-align: left;
+          }
+        }
+      }
+      &__input_button {
+        position: relative;
+        bottom: -8px;
+      }
     }
   }
 }
+
 @media screen and (max-width: 640px) {
   body:has(.home_container) {
     height: 100%;
@@ -65,21 +83,58 @@
     margin: 0 auto;
   }
   .home_container {
+    &__box_header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     &__box_form__form {
       margin-bottom: 2rem;
       &__container {
         align-items: center;
         flex-direction: column;
+        &__box_two__input_bloc:nth-child(2) {
+          position: static;
+          flex-direction: column;
+          height: 100%;
+        }
+      }
+      &__input_button {
+        position: static;
       }
     }
   }
   .link_bloc {
     align-self: center;
-    & a:hover {
-      // text-shadow: v.$textShadowWhite;
+  }
+  .header_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main_logo_container {
+    text-align: center;
+  }
+  .employee_container {
+    & .header_container {
+      text-align: center;
+      margin: 0 auto;
+    }
+    &__header {
+      &__nav {
+        justify-content: center;
+        flex-direction: column;
+        & div {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+      }
     }
   }
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .main_logo {
     animation: spin-logo infinite 59s linear;
