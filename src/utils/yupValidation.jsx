@@ -7,7 +7,7 @@ export const validationFormSchema = Yup.object().shape({
     .max(30, "too long !!")
     .matches(
       onlyTextRegex,
-      `- No Digits
+      `- No numbers
     - No special characters`
     )
     .required(),
@@ -17,7 +17,7 @@ export const validationFormSchema = Yup.object().shape({
     .max(30, "too long !!")
     .matches(
       onlyTextRegex,
-      `- Not numbers
+      `- No numbers
     - No special characters`
     ),
 
@@ -31,14 +31,14 @@ export const validationFormSchema = Yup.object().shape({
     .max(30, "too long !!")
     .matches(
       onlyTextRegex,
-      `- No Digits
+      `- No numbers
     - No special characters`
     )
     .required("Is required"),
   zipCode: Yup.number()
     .positive()
     .integer()
-    .moreThan(10000, "Must have 5 numbers ex : 56210")
+    .moreThan(9999, "Must have 5 numbers ex : 56210")
     .max(99999, "Too long !!")
     .required(),
   birthDate: Yup.date(),

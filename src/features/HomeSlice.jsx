@@ -33,7 +33,6 @@ export const HomeSlice = createSlice({
   initialState,
   reducers: {
     submitForm: (draft, action) => {
-      // console.log("submit form ", action.payload);
       draft.employee.push(action.payload);
     },
   },
@@ -51,7 +50,6 @@ export const { submitForm } = HomeSlice.actions;
  * @return  {ArrayOfObject}         L'objet employé de l'état.
  */
 export const sendEmployees = (state) => {
-  // console.log(state);
   return state.HOME.employee;
 };
 

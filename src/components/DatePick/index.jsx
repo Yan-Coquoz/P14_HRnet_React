@@ -23,7 +23,6 @@ const Dater = ({
         {addStar(labelName, isRequired)}
       </label>
       <input
-        lang="en"
         type="date"
         name={idName}
         id={idName}

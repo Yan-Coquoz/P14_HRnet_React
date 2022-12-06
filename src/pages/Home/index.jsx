@@ -37,7 +37,9 @@ const Home = () => {
       <div className="home_container__box_header">
         <Header>HRnet</Header>
         <div className="link_bloc">
-          <Link to="employee-list">View Current Employees</Link>
+          <Link to="employee-list" aria-label="To employee list">
+            View Current Employees
+          </Link>
         </div>
       </div>
 
@@ -142,7 +144,9 @@ const Home = () => {
                     </div>
 
                     <div className="home_container__box_form__form__container__input_button">
-                      <Button type="submit">Save</Button>
+                      <button type="submit" role="button">
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>

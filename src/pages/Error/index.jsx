@@ -8,7 +8,9 @@ const Error = () => {
       <h1 className="error_container__title">Error 404</h1>
       <p className="error_container__title__para">Page Not Found</p>
       <div className="link_bloc error_container__link">
-        <Link to="/">Back to home</Link>
+        <Link to="/" ari-label="Back to home">
+          Back to home
+        </Link>
       </div>
     </div>
   );

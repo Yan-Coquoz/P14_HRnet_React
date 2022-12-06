@@ -16,6 +16,13 @@ const Employee = () => {
     <StickyHeadTable datas={stateDatas} />
   );
 
+  /**
+   * Si la valeur d'entrée n'est pas vide, mappez à travers le tableau stateDatas et poussez les
+   * données vers le tableau _datas si la propriété firstName de l'objet de données inclut la valeur
+   * d'entrée.
+   *
+   * Si la valeur d'entrée est vide, rendez la table avec le tableau stateDatas par défaut.
+   */
   function getInputSearch(evt) {
     const inputValue = evt.target.value.toLowerCase();
     const _datas = [];
@@ -31,6 +38,7 @@ const Employee = () => {
     }
   }
 
+  /* Fonction appelée lorsque la valeur d'entrée est modifiée. */
   function renderTable(_data = []) {
     if (_data.length === 0 && ref.current.value === "") {
       setRenderDataTable(<StickyHeadTable datas={stateDatas} />);
@@ -48,7 +56,7 @@ const Employee = () => {
       <div className="employee_container__header">
         <Header>Current Employees</Header>
         <nav className="employee_container__header__nav">
-          <div>
+          <div role="search">
             <label htmlFor="search"></label>
             <input
               ref={ref}
