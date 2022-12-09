@@ -10,7 +10,7 @@ export const validationFormSchema = Yup.object().shape({
       `- No numbers
     - No special characters`
     )
-    .required(),
+    .required("this is a required field"),
 
   lastName: Yup.string()
     .min(2, "too short !")
@@ -34,16 +34,16 @@ export const validationFormSchema = Yup.object().shape({
       `- No numbers
     - No special characters`
     )
-    .required(),
+    .required("this is a required field"),
   zipCode: Yup.number()
     .positive()
     .integer()
     .moreThan(9999, "Must have 5 numbers ex : 56210")
     .max(99999, "Too long !!")
-    .required(),
+    .required("this is a required field"),
 
-  birthDate: Yup.date().required(),
+  birthDate: Yup.date().required("this is a required field"),
   startDate: Yup.date(),
-  states: Yup.string().nullable(false).required(),
-  department: Yup.string().nullable(false).required(),
+  states: Yup.string().nullable(false).required("this is a required field"),
+  department: Yup.string().nullable(false).required("this is a required field"),
 });
