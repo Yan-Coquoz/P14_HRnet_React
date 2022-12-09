@@ -14,12 +14,13 @@ const InputNum = ({
   maxi,
   onChange,
   value,
+  fieldRequired,
 }) => {
   return (
     <>
       <InputNumber
         idName={idName}
-        labelName={addStar(labelName, isRequired)}
+        labelName={addStar(labelName, fieldRequired)}
         onChange={onChange}
         isRequired={isRequired}
         myClass={myClass}
@@ -42,6 +43,7 @@ InputNum.propTypes = {
   toUpperCase: PropTypes.bool,
   mini: PropTypes.number,
   maxi: PropTypes.number,
+  fieldRequired: PropTypes.bool,
 };
 InputNum.defaultProps = {
   onChange: () => {},

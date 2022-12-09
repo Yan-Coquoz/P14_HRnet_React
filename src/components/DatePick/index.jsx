@@ -12,6 +12,7 @@ const Dater = ({
   isRequired,
   onChange,
   value,
+  fieldRequired,
 }) => {
   if (toUpperCase) {
     labelName = fromLowerToUpperCase(labelName);
@@ -20,7 +21,7 @@ const Dater = ({
   return (
     <div className="input_container">
       <label htmlFor={idName} className="input_container__label">
-        {addStar(labelName, isRequired)}
+        {addStar(labelName, fieldRequired)}
       </label>
       <input
         type="date"
@@ -41,5 +42,6 @@ Dater.propTypes = {
   isRequired: PropTypes.bool,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  fieldRequired: PropTypes.bool,
 };
 export default Dater;

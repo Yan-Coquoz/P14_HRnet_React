@@ -34,7 +34,7 @@ export const validationFormSchema = Yup.object().shape({
       `- No numbers
     - No special characters`
     )
-    .required("Is required"),
+    .required(),
   zipCode: Yup.number()
     .positive()
     .integer()
@@ -42,8 +42,8 @@ export const validationFormSchema = Yup.object().shape({
     .max(99999, "Too long !!")
     .required(),
 
-  birthDate: Yup.date(),
-  startDate: Yup.date().required("Is required"),
+  birthDate: Yup.date().required(),
+  startDate: Yup.date(),
   states: Yup.string().nullable(false).required(),
-  department: Yup.string().required().nullable(false),
+  department: Yup.string().nullable(false).required(),
 });

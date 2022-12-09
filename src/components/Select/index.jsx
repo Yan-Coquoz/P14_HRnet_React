@@ -8,18 +8,19 @@ import { addStar } from "../../utils";
 /**
  * Select est une fonction qui renvoie un composant SelectField.
  *
- * @prop   {String}  idName       [idName description]
- * @prop   {String}  labelName    [labelName description]
- * @prop   {Boolean}  isRequired   [isRequired description]
- * @prop   {ArrayOf{String}||{Object}}  options      [options description]
- * @prop   {Boolean}  optValue     [optValue description]
- * @prop   {Boolean}  toUpperCase  [toUpperCase description]
- * @prop   {Boolean}  group        [group description]
- * @prop   {Function}  onChange     [onChange description]
- * @prop   {String}  value        [value description]
- * @prop   {Function}  handleBlur   [handleBlur description]
+ * @prop   {String}  idName       field identifier
+ * @prop   {String}  labelName    the label name
+ * @prop   {Boolean}  isRequired   if the field is required, (send default browser error message)
+ * @prop   {ArrayOf{String}||{Object}}  options      option list
+ * @prop   {Boolean}  optValue      title of the different tables added in the list
+ * @prop   {Boolean}  toUpperCase     Capitalize the first letter of each word in the label field
+ * @prop   {Boolean}  group        If it is an array grouping
+ * @prop   {Function}  onChange     capture the event
+ * @prop   {String}  value        value in the field
+ * @prop   {Function}  handleBlur   capture the event by click
+ * @prop   {Boolean}  fieldRequired   if the field is required, A star id added
  *
- * @return  {React.ReactElement}
+ * @return  {React.ReactElement} Select type
  */
 const Select = ({
   group,
@@ -31,6 +32,7 @@ const Select = ({
   options,
   optValue,
   toUpperCase,
+  fieldRequired,
   value,
 }) => {
   return (
@@ -39,7 +41,7 @@ const Select = ({
         group={group}
         idName={idName}
         isRequired={isRequired}
-        labelName={addStar(labelName, isRequired)}
+        labelName={addStar(labelName, fieldRequired)}
         onBlur={handleBlur}
         onChange={onChange}
         options={options}
@@ -61,6 +63,7 @@ Select.propTypes = {
   optValue: PropTypes.bool,
   toUpperCase: PropTypes.bool,
   value: PropTypes.string,
+  fieldRequired: PropTypes.bool,
 };
 
 Select.defaultProps = {

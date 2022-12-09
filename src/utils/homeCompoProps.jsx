@@ -7,7 +7,7 @@ export const selectState = {
   options: states,
   group: false,
   optValue: true,
-  isRequired: true,
+  fieldRequired: true,
 };
 
 export const selectDepartment = {
@@ -17,7 +17,7 @@ export const selectDepartment = {
   options: departments,
   group: false,
   optValue: true,
-  isRequired: false,
+  fieldRequired: true,
 };
 
 export const inputFirstName = {
@@ -25,7 +25,7 @@ export const inputFirstName = {
   labelName: "first name",
   myClass: "input_text",
   toUpperCase: true,
-  isRequired: true,
+  fieldRequired: true,
 };
 
 export const inputLastName = {
@@ -33,7 +33,7 @@ export const inputLastName = {
   labelName: "last name",
   myClass: "input_text",
   toUpperCase: true,
-  isRequired: false,
+  fieldRequired: false,
 };
 
 export const inputStreet = {
@@ -41,7 +41,7 @@ export const inputStreet = {
   labelName: "street",
   myClass: "input_text",
   toUpperCase: true,
-  isRequired: false,
+  fieldRequired: false,
 };
 
 export const inputCity = {
@@ -49,7 +49,7 @@ export const inputCity = {
   labelName: "city",
   myClass: "input_text",
   toUpperCase: true,
-  isRequired: true,
+  fieldRequired: true,
 };
 
 export const inputZipCode = {
@@ -59,7 +59,7 @@ export const inputZipCode = {
   toUpperCase: true,
   mini: 10000,
   maxi: 99999,
-  isRequired: true,
+  fieldRequired: true,
 };
 
 export const inputBirthDate = {
@@ -68,7 +68,7 @@ export const inputBirthDate = {
   toUpperCase: true,
   placeh: "click here",
   lang: "en",
-  isRequired: false,
+  fieldRequired: true,
 };
 
 export const inputStartDate = {
@@ -77,5 +77,5 @@ export const inputStartDate = {
   toUpperCase: true,
   placeh: "click here",
   lang: "en",
-  isRequired: true,
+  fieldRequired: false,
 };

@@ -12,6 +12,7 @@ import TableRow from "@mui/material/TableRow";
 import { fromLowerToUpperCase } from "../../utils";
 
 import "../../styles/main.scss";
+import { formGroupClasses } from "@mui/material";
 
 const columns = [
   { id: "firstName", label: "first name", align: "center", minWidth: 100 },
@@ -48,16 +49,25 @@ const columns = [
 ];
 
 function createData(
-  firstName,
-  lastName,
-  startDate,
-  department,
-  birthDate,
-  street,
-  city,
-  states,
-  zipCode
+  _firstName,
+  _lastName,
+  _startDate,
+  _department,
+  _birthDate,
+  _street,
+  _city,
+  _states,
+  _zipCode
 ) {
+  const firstName = fromLowerToUpperCase(_firstName);
+  const lastName = fromLowerToUpperCase(_lastName);
+  const city = fromLowerToUpperCase(_city);
+  const startDate = _startDate;
+  const department = fromLowerToUpperCase(_department);
+  const birthDate = _birthDate;
+  const zipCode = _zipCode;
+  const street = _street;
+  const states = _states;
   return {
     firstName,
     lastName,

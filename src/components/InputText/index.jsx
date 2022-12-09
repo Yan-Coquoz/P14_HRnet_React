@@ -12,12 +12,13 @@ const TextInput = ({
   toUpperCase,
   onChange,
   value,
+  fieldRequired,
 }) => {
   return (
     <div className="input_container">
       <label htmlFor={idName} className="input_container__label">
         {toUpperCase
-          ? addStar(fromLowerToUpperCase(labelName), isRequired)
+          ? addStar(fromLowerToUpperCase(labelName), fieldRequired)
           : addStar(labelName, isRequired)}
       </label>
       <input
@@ -36,6 +37,7 @@ TextInput.propTypes = {
   isRequired: PropTypes.bool,
   onchange: PropTypes.func,
   value: PropTypes.string,
+  fieldRequired: PropTypes.bool,
 };
 
 export default TextInput;
