@@ -75,7 +75,11 @@ const Home = () => {
                       {...inputFirstName}
                     />
                     {errors.firstName && touched.firstName}
-                    <div className="error">{errors.firstName}</div>
+                    <div
+                      className={errors.firstName ? "error active" : "error"}
+                    >
+                      {errors.firstName}
+                    </div>
 
                     <Field
                       as={TextInput}
@@ -83,16 +87,26 @@ const Home = () => {
                       {...inputLastName}
                     />
                     {errors.lastName && touched.lastName}
-                    <div className="error">{errors.lastName}</div>
+                    <div className={errors.lastName ? "error active" : "error"}>
+                      {errors.lastName}
+                    </div>
                   </div>
                   <div className="home_container__box_form__form__container__box_one__input_bloc">
                     <Field name="birthDate" as={Dater} {...inputBirthDate} />
                     {errors.birthDate && touched.birthDate}
-                    <div className="error">{errors.birthDate}</div>
+                    <div
+                      className={errors.birthDate ? "error active" : "error"}
+                    >
+                      {errors.birthDate}
+                    </div>
 
                     <Field name="startDate" as={Dater} {...inputStartDate} />
                     {errors.startDate && touched.startDate}
-                    <div className="error">{errors.startDate}</div>
+                    <div
+                      className={errors.startDate ? "error active" : "error"}
+                    >
+                      {errors.startDate}
+                    </div>
                   </div>
                 </div>
                 <div className="home_container__box_form__form__container__box_two">
@@ -106,7 +120,11 @@ const Home = () => {
                           {...inputStreet}
                         />
                         {errors.street && touched.street}
-                        <div className="error">{errors.street}</div>
+                        <div
+                          className={errors.street ? "error active" : "error"}
+                        >
+                          {errors.street}
+                        </div>
 
                         <Field
                           as={TextInput}
@@ -114,7 +132,9 @@ const Home = () => {
                           {...inputCity}
                         />
                         {errors.city && touched.city}
-                        <div className="error">{errors.city}</div>
+                        <div className={errors.city ? "error active" : "error"}>
+                          {errors.city}
+                        </div>
                       </div>
                       <div>
                         <Field
@@ -122,12 +142,20 @@ const Home = () => {
                           as={Select}
                           {...selectState}
                         />
-                        {errors.state && touched.state}
-                        <div className="error">{errors.state}</div>
+                        {errors.states && touched.states}
+                        <div
+                          className={errors.states ? "error active" : "error"}
+                        >
+                          {errors.states}
+                        </div>
 
                         <Field as={InputNum} name="zipCode" {...inputZipCode} />
                         {(errors.zipCode, touched.zipCode)}
-                        <div className="error">{errors.zipCode}</div>
+                        <div
+                          className={errors.zipCode ? "error active" : "error"}
+                        >
+                          {errors.zipCode}
+                        </div>
                       </div>
                     </fieldset>
                   </div>
@@ -140,7 +168,11 @@ const Home = () => {
                         {...selectDepartment}
                       />
                       {errors.department && touched.department}
-                      <div className="error">{errors.department}</div>
+                      <div
+                        className={errors.department ? "error active" : "error"}
+                      >
+                        {errors.department}
+                      </div>
                     </div>
 
                     <div className="home_container__box_form__form__container__input_button">

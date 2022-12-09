@@ -41,6 +41,7 @@ export const validationFormSchema = Yup.object().shape({
     .moreThan(9999, "Must have 5 numbers ex : 56210")
     .max(99999, "Too long !!")
     .required(),
+
   birthDate: Yup.date(),
   startDate: Yup.date().required("Is required"),
   states: Yup.string().nullable(false).required(),
