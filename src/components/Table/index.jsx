@@ -9,7 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
-import { fromLowerToUpperCase } from "../../utils";
+import { fromLowerToUpperCase, etats } from "../../utils";
 
 import "../../styles/main.scss";
 import { formGroupClasses } from "@mui/material";
@@ -67,7 +67,13 @@ function createData(
   const birthDate = _birthDate;
   const zipCode = _zipCode;
   const street = _street;
-  const states = _states;
+
+  const states = etats.map((state) => {
+    if (state.name.includes(_states)) {
+      return state.abbreviation;
+    }
+  });
+
   return {
     firstName,
     lastName,
@@ -87,6 +93,7 @@ export default function StickyHeadTable({ datas }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [isDatas, setIsDatas] = React.useState(false);
+
   React.useEffect(() => {
     if (datas.length > 0 && Array.isArray(datas)) {
       setIsDatas(true);
@@ -156,7 +163,7 @@ export default function StickyHeadTable({ datas }) {
                 return (
                   <TableRow
                     hover
-                    role="checkbox"
+                    role="table"
                     tabIndex={-1}
                     key={key}
                     className={key % 2 === 0 ? "even" : ""}

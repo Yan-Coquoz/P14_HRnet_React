@@ -6,7 +6,7 @@ export const departments = [
   "legal",
 ];
 
-export const states = [
+export const etats = [
   {
     name: "Alabama",
     abbreviation: "AL",

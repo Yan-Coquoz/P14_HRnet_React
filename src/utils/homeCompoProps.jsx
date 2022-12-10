@@ -1,10 +1,10 @@
-import { states, departments } from "./SelectDatas";
+import { etats, departments } from "./SelectDatas";
 
 export const selectState = {
   idName: "states",
   labelName: "state",
   toUpperCase: true,
-  options: states,
+  options: etats,
   group: false,
   optValue: true,
   fieldRequired: true,

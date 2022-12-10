@@ -1,3 +1,5 @@
+import { departments, etats } from "./SelectDatas";
+
 import {
   fromLowerToUpperCase,
   toCamelCase,
@@ -52,4 +54,6 @@ export {
   zipCodeRegex,
   capitalizeRegex,
   camelCaseRegex,
+  departments,
+  etats,
 };
